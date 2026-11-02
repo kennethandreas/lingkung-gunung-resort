@@ -11,6 +11,20 @@ The application combines a public website, an online booking engine with payment
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-8.4-4479A1?logo=mysql&logoColor=white)
 
+## My role
+
+Solo project, built end to end:
+
+- Requirements analysis and technical planning based on the resort's official brochure and price list
+- Database design, including per-night inventory and booking state machine
+- Backend business logic, payment gateway integration and webhook handling
+- Public website, booking flow and customer accounts (UI/UX, mobile-first)
+- Admin panel, role-based access and reporting
+- Automated tests, security hardening, deployment and backup setup
+- User manual and presentation for the resort owner
+
+## Screenshots
+
 | Home page | Mobile |
 |---|---|
 | ![Home page](docs/panduan/gambar/p01-beranda.jpg) | <img src="docs/panduan/gambar/p02-beranda-hp.jpg" alt="Mobile home page" width="260"> |
@@ -202,3 +216,13 @@ tests/Feature/          Feature and regression tests
 | [`docs/lingkung-gunung-website-user-manual-id.pdf`](docs/lingkung-gunung-website-user-manual-id.pdf) | User manual for resort staff (Indonesian) |
 
 Most project documentation is written in Indonesian. The public website interface is in Indonesian.
+
+## Credits
+
+Photographs, logo and brand assets belong to Lingkung Gunung Adventure Camp Resort Bogor and are used for this project only.
+
+## License
+
+Copyright © 2026 Kenneth Andreas. All rights reserved.
+
+This repository is published as a portfolio showcase. The source code may not be copied, modified or distributed without written permission.

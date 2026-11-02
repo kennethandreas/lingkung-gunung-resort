@@ -7,7 +7,7 @@ Dicek ulang: **25 Oktober 2026**. Daftar pertanyaan lengkap untuk resort ada di 
 
 | Kode | Sumber | Tanggal / masa berlaku | Catatan |
 |---|---|---|---|
-| **B26** | `docs/BROSUR ELJI 2026.pdf` (30 halaman, hasil scan, dibaca per halaman sebagai gambar) | Judul "2026"; tidak ada tanggal terbit atau masa berlaku tertulis di dalamnya | Sumber utama harga, paket group, menu A–E, aktivitas, item tambahan, mekanisme pembayaran |
+| **B26** | Brosur resmi ELJI 2026 (30 halaman, hasil scan; tidak disertakan di repositori) | Judul "2026"; tidak ada tanggal terbit atau masa berlaku tertulis di dalamnya | Sumber utama harga, paket group, menu A–E, aktivitas, item tambahan, mekanisme pembayaran |
 | **WEB** | https://elji.id/ (beranda, `/room-elji-cottage/`, `/deluxe-room/`, `/junior-suite-room/`, `/artikel/`, 5 halaman promo, artikel "Tempat Camping Outbound") | Artikel 20 Sep 2024 – 19 Mar 2025; footer "© 2023" | Situs resmi yang aktif. Domain di brosur (`www.eji.id`) tidak berfungsi |
 | **PRM** | Gambar promo di elji.id (`5_20241029…png` Glamping, `4_20241029…png` Pondok Sunset, `1_20241029…png` Camping Ceria, `Paket_20241029…jpg` Camp Site Jabon, `PHOTO-2025-01-24…jpg` Campervan, `promo-camp-cer.jpeg`) | Nama file Okt 2024 & Jan 2025; tanpa masa berlaku | **Lebih lama dari B26**, jadi tidak ditampilkan sebagai promo aktif |
 | **DOK** | `docs/Perencanaan Teknis Website Lingkung Gunung.pdf` | – | Nama pemasaran unit & aturan sistem |

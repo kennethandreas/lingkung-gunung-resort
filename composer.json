@@ -1,10 +1,10 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "kennethandreas/lingkung-gunung-resort",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
-    "license": "MIT",
+    "description": "Website and direct booking system for Lingkung Gunung Adventure Camp Resort Bogor.",
+    "keywords": ["laravel", "filament", "booking", "resort"],
+    "license": "proprietary",
     "require": {
         "php": "^8.3",
         "barryvdh/laravel-dompdf": "^3.1",

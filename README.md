@@ -23,6 +23,72 @@ Solo project, built end to end:
 - Automated tests, security hardening, deployment and backup setup
 - User manual and presentation for the resort owner
 
+## Product Decisions
+
+The goal in the technical plan was to move bookings away from online travel agents, which take a 15–25% commission, to a channel the resort owns. Most decisions below follow from that goal and from building it alone, at zero budget, in a fixed timeline.
+
+### 60-minute inventory hold
+
+When a guest clicks *Pay*, the selected units are reserved for 60 minutes and released automatically if payment does not arrive. The hold has to be long enough for a guest to finish a Midtrans payment (a bank transfer or virtual account payment often happens outside the browser), but short enough that abandoned checkouts do not block the last unit on a busy weekend.
+
+- A scheduler releases expired holds every minute, so stock comes back without staff action.
+- One customer account can have at most 3 unpaid holds at a time, so a single user cannot hoard availability.
+- If a payment arrives after the hold expired, the system re-reserves the units only if they are still free. Otherwise the booking is flagged for a manual refund instead of being overbooked.
+- The duration is a setting in the admin panel, not a constant in code.
+
+[ISI: why 60 minutes and not 30 or 120, e.g. input from the resort or observed payment times]
+
+### 25% deposit, balance due 3 days before arrival
+
+Guests choose between paying a 25% deposit or paying in full. A deposit lowers the upfront cost for guests booking weeks ahead, while the resort still gets a paid commitment for the dates.
+
+- Bookings made fewer than 3 days before arrival can only be paid in full, so no guest arrives with an unpaid balance.
+- Balance reminders go out by email 7 and 4 days before arrival, each with a fresh payment link.
+- The percentage and the deadline are admin settings, because they are the resort's policy, not a technical choice.
+
+[ISI: was 25% the resort's existing policy, or a value I proposed?] The cancellation and refund policy for deposits is still an open question for the resort (see `docs/DATA-TODO.md`).
+
+### Separate flows for direct bookings (B2C) and the Package Builder (B2B)
+
+Families and travelers buy a fixed product (a unit for a number of nights) and can pay right away. Companies, schools and communities buy a configurable package: minimum participants, a menu for every meal, activities, add-ons and weekday-only variants. Their price is not final until sales confirms the details, and they need a document they can pass around internally.
+
+- The B2B flow therefore ends in a quotation with a PDF proposal and a WhatsApp hand-off to sales, not in a payment screen.
+- Only after the deal is agreed does staff convert the quotation into a booking. The conversion uses the same `BookingService` and inventory locking as B2C, so there is one set of stock rules for every channel.
+- Sales can extend the hold to up to 7 days during conversion, to fit the slower payment process of institutions.
+
+### Verified-only reviews
+
+On a booking site the resort runs itself, reviews only persuade visitors if they can trust that real guests wrote them.
+
+- Only a signed-in customer whose own booking was checked in, and whose check-out date has passed, can write a review. Paid bookings where the guest never arrived cannot be reviewed.
+- One review per booking per item, enforced by a unique database index.
+- Every review is moderated before it is published.
+- When there are no published reviews, the site shows no rating at all instead of a default score.
+- `aggregateRating` structured data is intentionally left out, because Google does not show self-collected reviews for local businesses and may treat them as a violation.
+
+### Unconfirmed products are not bookable online
+
+Where the brochure was unclear (for example Camp Site capacity and Campervan pricing), online booking is switched off for that product until the resort confirms the numbers, and guests are directed to WhatsApp instead. Selling a unit at the wrong price would cost more than missing an online booking. The open questions are tracked in `docs/DATA-TODO.md`.
+
+## What I Deprioritized
+
+The MVP scope was locked to keep a one-person, 13-week plan on track. These items were moved to a later phase:
+
+- Automatic WhatsApp notifications (email is used for e-tickets and reminders)
+- A mobile app (the website is mobile-first instead)
+- A loyalty program
+- Channel manager integration with OTAs. Until then, staff must manually block dates that were sold on OTAs, to avoid double bookings across channels.
+
+[ISI: why these items were deprioritized, and anything else you cut during development]
+
+## Outcome
+
+- Status: [ISI: e.g. live / in UAT / handed over to the resort, plus the date]
+- Live URL: [ISI: website URL, if public]
+- Bookings through the website: [ISI: number of bookings per month]
+- Share of direct bookings compared to OTAs: [ISI: percentage, if the resort tracks it]
+- Feedback from the owner and staff: [ISI: a short quote or summary]
+
 ## Screenshots
 
 | Home page | Mobile |

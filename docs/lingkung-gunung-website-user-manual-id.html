@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panduan Website Lingkung Gunung Resort</title>
+<!--
+  Sumber panduan yang bisa diedit. Gambar ada di panduan/gambar (tangkapan layar asli, data contoh fiktif).
+  Buat ulang PDF: lihat docs/panduan/README.md
+  Setiap <section class="page"> = satu halaman A4. Nomor halaman & daftar isi diisi otomatis oleh skrip di bawah.
+-->
+<style>
+@font-face { font-family: 'Fraunces'; src: url('panduan/aset/fonts/fraunces.woff2') format('woff2'); font-weight: 100 900; font-style: normal; }
+@font-face { font-family: 'Fraunces'; src: url('panduan/aset/fonts/fraunces-italic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; }
+@font-face { font-family: 'Plus Jakarta Sans'; src: url('panduan/aset/fonts/plus-jakarta-sans.woff2') format('woff2'); font-weight: 200 800; }
+
+:root {
+  --hutan: #1f402d; --hutan-tua: #12261a; --hutan-muda: #e8efe9;
+  --emas: #d4a43c; --emas-tua: #8a6516; --emas-muda: #faf3e2;
+  --kabut: #fbf9f4; --garis: #ddd6c8; --teks: #23241f; --abu: #5f6157;
+  --sukses: #1f7a4a; --peringatan: #a5660b; --bahaya: #b3261e; --info: #1f5f8b;
+}
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #d9d6cf; }
+body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--teks); font-size: 9.6pt; line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 210mm; height: 297mm; padding: 15mm 16mm 17mm; margin: 8mm auto; background: #fff; position: relative; overflow: hidden; page-break-after: always; break-after: page; }
+@media print { html, body { background: #fff; } .page { margin: 0; box-shadow: none; } }
+.page:last-of-type { page-break-after: auto; break-after: auto; }
+.page-footer { position: absolute; left: 16mm; right: 16mm; bottom: 8mm; display: flex; justify-content: space-between; font-size: 7.5pt; color: var(--abu); border-top: 0.3mm solid var(--garis); padding-top: 2mm; }
+.page-footer b { color: var(--hutan); font-weight: 600; }
+
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; color: var(--hutan-tua); margin: 0; line-height: 1.15; }
+h1 { font-size: 22pt; margin-bottom: 2mm; }
+h2 { font-size: 13.5pt; margin: 5mm 0 2mm; }
+h3 { font-size: 11pt; margin: 3.5mm 0 1.2mm; }
+p { margin: 0 0 2.2mm; }
+.eyebrow { font-size: 7pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--emas-tua); font-weight: 700; display: flex; align-items: center; gap: 3mm; margin-bottom: 2mm; }
+.eyebrow::before { content: ''; width: 8mm; height: 0.3mm; background: var(--emas); }
+.lead { font-size: 10.5pt; color: var(--abu); margin-bottom: 4mm; }
+ol, ul { margin: 0 0 2.5mm; padding-left: 5mm; }
+li { margin-bottom: 0.8mm; }
+ol.langkah { counter-reset: n; list-style: none; padding: 0; }
+ol.langkah > li { counter-increment: n; position: relative; padding-left: 8mm; margin-bottom: 1.6mm; }
+ol.langkah > li::before { content: counter(n); position: absolute; left: 0; top: 0.2mm; width: 5.2mm; height: 5.2mm; background: var(--hutan); color: #fff; font-size: 7.5pt; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.ui { font-weight: 700; color: var(--hutan); }
+.ui::before { content: '‹'; color: var(--emas-tua); margin-right: 0.4mm; }
+.ui::after { content: '›'; color: var(--emas-tua); margin-left: 0.4mm; }
+.kecil { font-size: 8pt; color: var(--abu); }
+
+/* Gambar */
+figure { margin: 2mm 0 3mm; }
+.shot { border: 0.3mm solid var(--garis); overflow: hidden; background: var(--kabut); }
+.shot img { display: block; width: 100%; height: auto; }
+figcaption { font-size: 7.6pt; color: var(--abu); margin-top: 1.2mm; }
+figcaption b { color: var(--hutan); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+.side { display: grid; grid-template-columns: 1fr 62mm; gap: 6mm; align-items: start; }
+.side-l { display: grid; grid-template-columns: 62mm 1fr; gap: 6mm; align-items: start; }
+
+/* Tabel */
+table { width: 100%; border-collapse: collapse; margin: 1.5mm 0 3mm; font-size: 8.6pt; }
+th { text-align: left; background: var(--hutan); color: #fff; font-weight: 600; padding: 1.8mm 2.2mm; }
+td { padding: 1.6mm 2.2mm; border-bottom: 0.25mm solid var(--garis); vertical-align: top; }
+tr:nth-child(even) td { background: #faf8f3; }
+td:first-child { font-weight: 600; color: var(--hutan-tua); }
+
+/* Kotak */
+.kotak { border-left: 1mm solid var(--hutan); background: var(--hutan-muda); padding: 2.5mm 3.5mm; margin: 2mm 0 3mm; }
+.kotak.emas { border-color: var(--emas); background: var(--emas-muda); }
+.kotak.merah { border-color: var(--bahaya); background: #fbeceb; }
+.kotak p:last-child, .kotak ul:last-child { margin-bottom: 0; }
+.kotak-judul { font-weight: 700; color: var(--hutan-tua); margin-bottom: 1mm; }
+
+/* Label status */
+.tag { display: inline-block; font-size: 7pt; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.4mm 1.6mm; border: 0.25mm solid; white-space: nowrap; }
+.t-ok { color: var(--sukses); background: #e8f4ed; }
+.t-cek { color: var(--peringatan); background: #fdf3e2; }
+.t-no { color: var(--bahaya); background: #fbeceb; }
+.t-info { color: var(--info); background: #e7f0f7; }
+.t-abu { color: #555; background: #eee; }
+
+/* Alur */
+.alur { display: flex; flex-direction: column; gap: 0; align-items: stretch; margin: 2mm 0; }
+.alur-baris { display: flex; align-items: stretch; gap: 0; }
+.langkah-box { flex: 1; border: 0.35mm solid var(--hutan); background: #fff; padding: 2mm 2.5mm; font-size: 8.2pt; position: relative; }
+.langkah-box b { display: block; color: var(--hutan-tua); font-size: 8.8pt; margin-bottom: 0.5mm; }
+.langkah-box.gelap { background: var(--hutan); color: #e9efe9; }
+.langkah-box.gelap b { color: #fff; }
+.langkah-box.emas { border-color: var(--emas); background: var(--emas-muda); }
+.langkah-box.ok { border-color: var(--sukses); background: #e8f4ed; }
+.langkah-box.no { border-color: var(--bahaya); background: #fbeceb; }
+.panah { width: 7mm; flex: 0 0 7mm; display: flex; align-items: center; justify-content: center; color: var(--emas-tua); font-size: 12pt; font-weight: 700; }
+.panah-bawah { text-align: center; color: var(--emas-tua); font-size: 12pt; line-height: 1; margin: 0.8mm 0; font-weight: 700; }
+.cabang { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
+.nomor { display: inline-flex; width: 4.6mm; height: 4.6mm; background: var(--emas); color: var(--hutan-tua); font-weight: 800; font-size: 7pt; align-items: center; justify-content: center; margin-right: 1.2mm; }
+
+/* Sampul */
+.sampul { padding: 0; background: var(--hutan-tua); color: #fff; }
+.sampul .foto { position: absolute; inset: 0; background: url('../public/images/resort/glamping-lembah-1600.webp') center/cover; opacity: 0.5; }
+.sampul .gradasi { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,38,26,0.55) 0%, rgba(18,38,26,0.25) 40%, rgba(18,38,26,0.92) 78%); }
+.sampul .isi { position: absolute; left: 20mm; right: 20mm; bottom: 34mm; }
+.sampul .logo { position: absolute; left: 20mm; top: 20mm; display: flex; align-items: center; gap: 4mm; }
+.sampul .logo img { height: 18mm; }
+.sampul .logo div { font-family: 'Fraunces', serif; font-size: 15pt; line-height: 1.1; }
+.sampul .logo small { display: block; font-family: 'Plus Jakarta Sans'; font-size: 6.5pt; letter-spacing: 0.22em; color: var(--emas); margin-top: 1mm; }
+.sampul h1 { color: #fff; font-size: 34pt; line-height: 1.05; margin-bottom: 4mm; }
+.sampul .sub { font-family: 'Fraunces', serif; font-style: italic; font-size: 15pt; color: #e7dcc3; }
+.sampul .meta { margin-top: 12mm; padding-top: 4mm; border-top: 0.3mm solid rgba(255,255,255,0.35); font-size: 8.5pt; color: #d9e2da; display: flex; gap: 10mm; }
+.sampul .meta b { display: block; color: var(--emas); font-size: 6.8pt; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.6mm; }
+
+/* Daftar isi */
+.toc { list-style: none; padding: 0; margin: 3mm 0 0; }
+.toc li { display: flex; align-items: baseline; gap: 2mm; padding: 1.5mm 0; border-bottom: 0.25mm dotted var(--garis); font-size: 10pt; }
+.toc li .no { font-family: 'Fraunces', serif; color: var(--emas-tua); width: 7mm; }
+.toc li .judul { flex: 1; }
+.toc li .hal { font-weight: 700; color: var(--hutan); }
+.toc li.sub { font-size: 8.8pt; padding-left: 9mm; color: var(--abu); }
+</style>
+</head>
+<body>
+
+<!-- ============================== SAMPUL ============================== -->
+<section class="page sampul" data-no-footer>
+  <div class="foto"></div><div class="gradasi"></div>
+  <div class="logo"><img src="panduan/aset/logo-mark-terang.png" alt=""><div>Lingkung Gunung<small>ADVENTURE CAMP RESORT BOGOR</small></div></div>
+  <div class="isi">
+    <h1>Panduan Website<br>Lingkung Gunung Resort</h1>
+    <p class="sub">Penjelasan Fitur dan Panduan Penggunaan</p>
+    <div class="meta">
+      <div><b>Untuk</b>Pemilik &amp; pengelola resort</div>
+      <div><b>Versi website</b>Oktober 2026</div>
+      <div><b>Bahasa</b>Indonesia</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== DAFTAR ISI ============================== -->
+<section class="page">
+  <p class="eyebrow">Daftar isi</p>
+  <h1>Isi panduan</h1>
+  <ol class="toc">
+    <li data-toc="umum"><span class="no">1</span><span class="judul">Gambaran umum website</span><span class="hal"></span></li>
+    <li data-toc="tamu"><span class="no">2</span><span class="judul">Fitur untuk tamu (website publik)</span><span class="hal"></span></li>
+    <li data-toc="alur-booking"><span class="no">3</span><span class="judul">Alur pemesanan</span><span class="hal"></span></li>
+    <li data-toc="alur-bayar"><span class="no">4</span><span class="judul">Alur pembayaran</span><span class="hal"></span></li>
+    <li data-toc="status"><span class="no">5</span><span class="judul">Daftar status booking &amp; pembayaran</span><span class="hal"></span></li>
+    <li data-toc="admin"><span class="no">6</span><span class="judul">Admin panel: masuk &amp; peta menu</span><span class="hal"></span></li>
+    <li data-toc="dasbor"><span class="no">7</span><span class="judul">Dasbor</span><span class="hal"></span></li>
+    <li data-toc="booking"><span class="no">8</span><span class="judul">Mengelola booking &amp; pembayaran</span><span class="hal"></span></li>
+    <li data-toc="harga"><span class="no">9</span><span class="judul">Akomodasi, harga, promo &amp; kalender</span><span class="hal"></span></li>
+    <li data-toc="rombongan"><span class="no">10</span><span class="judul">Paket rombongan, penawaran B2B &amp; pesan masuk</span><span class="hal"></span></li>
+    <li data-toc="ulasan"><span class="no">11</span><span class="judul">Ulasan tamu</span><span class="hal"></span></li>
+    <li data-toc="konten"><span class="no">12</span><span class="judul">Konten website &amp; pengaturan umum</span><span class="hal"></span></li>
+    <li data-toc="laporan"><span class="no">13</span><span class="judul">Laporan &amp; statistik</span><span class="hal"></span></li>
+    <li data-toc="keamanan"><span class="no">14</span><span class="judul">Pengguna, hak akses &amp; keamanan data</span><span class="hal"></span></li>
+    <li data-toc="faq"><span class="no">15</span><span class="judul">Pertanyaan umum &amp; jika ada kendala</span><span class="hal"></span></li>
+    <li data-toc="istilah"><span class="no">16</span><span class="judul">Daftar istilah &amp; ringkasan fitur</span><span class="hal"></span></li>
+  </ol>
+
+  <h2>Cara membaca panduan ini</h2>
+  <p>Panduan disusun dari website yang sebenarnya. Gambar adalah tangkapan layar asli; semua nama tamu, nomor, dan email di gambar adalah <b>data contoh fiktif</b>. Data tamu sungguhan tidak ditampilkan.</p>
+  <table>
+    <tr><th style="width:42mm">Tanda</th><th>Artinya</th></tr>
+    <tr><td><span class="tag t-ok">Berjalan</span></td><td>Fitur ada dan sudah dicoba berjalan (uji otomatis dan/atau dicoba di browser).</td></tr>
+    <tr><td><span class="tag t-cek">Perlu dicek</span></td><td>Fitur ada, tetapi hasil akhirnya bergantung pada layanan luar atau server hosting yang belum bisa dipastikan (mis. pengiriman email, pembayaran sungguhan).</td></tr>
+    <tr><td><span class="tag t-no">Belum ada</span></td><td>Fitur belum tersedia di website.</td></tr>
+  </table>
+  <p>Nama tombol dan menu ditulis seperti di layar, misalnya <span class="ui">Catat pembayaran</span>.</p>
+</section>
+
+<!-- ============================== 1. GAMBARAN UMUM ============================== -->
+<section class="page" id="umum">
+  <p class="eyebrow">Bagian 1</p>
+  <h1>Gambaran umum website</h1>
+  <p class="lead">Website Lingkung Gunung adalah etalase resort sekaligus tempat tamu memesan dan membayar langsung, tanpa perantara. Di belakangnya ada admin panel untuk tim resort.</p>
+
+  <div class="alur-baris" style="margin:4mm 0">
+    <div class="langkah-box emas"><b>Tamu</b>Melihat akomodasi, aktivitas, paket rombongan, harga, ulasan. Memesan dan membayar.</div>
+    <div class="panah">⇄</div>
+    <div class="langkah-box gelap"><b>Website publik</b>Menampilkan isi dari admin panel. Menghitung harga, mengecek stok, mencatat booking.</div>
+    <div class="panah">⇄</div>
+    <div class="langkah-box"><b>Admin panel (tim resort)</b>Mengelola booking, pembayaran, harga, stok, konten, ulasan, laporan.</div>
+  </div>
+
+  <div class="grid2">
+    <div>
+      <h2>Yang bisa dilakukan tamu</h2>
+      <ul>
+        <li>Melihat 8 tipe akomodasi lengkap dengan foto, fasilitas, dan harga per malam.</li>
+        <li>Melihat aktivitas, paket rombongan (LDKS, gathering, outing), dan menu makan.</li>
+        <li>Mengecek ketersediaan dan memesan akomodasi online.</li>
+        <li>Membayar DP atau lunas lewat Midtrans, atau melihat instruksi transfer.</li>
+        <li>Membuat akun, melihat riwayat booking, mengunduh e-ticket.</li>
+        <li>Menulis ulasan setelah menginap.</li>
+        <li>Merancang paket rombongan dan menerima proposal PDF.</li>
+        <li>Mengirim pertanyaan lewat form kontak atau WhatsApp.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Yang dikerjakan tim resort</h2>
+      <ul>
+        <li>Memantau hal yang perlu ditindaklanjuti hari ini di <b>Dasbor</b>.</li>
+        <li>Mencatat transfer, check-in tamu, membatalkan booking.</li>
+        <li>Memasukkan reservasi telepon / walk-in.</li>
+        <li>Mengubah harga, stok, promo, dan memblokir tanggal.</li>
+        <li>Menindaklanjuti penawaran rombongan dan pesan masuk.</li>
+        <li>Menyetujui atau menolak ulasan tamu.</li>
+        <li>Mengubah foto, teks, artikel, FAQ, dan banner website.</li>
+        <li>Melihat laporan pendapatan, booking, okupansi; ekspor Excel.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="kotak emas">
+    <p class="kotak-judul">Satu sumber data</p>
+    <p>Semua yang tampil di website (harga, foto, deskripsi, promo, kontak) diambil dari admin panel. Bila diubah di admin, website ikut berubah. Tidak perlu meminta programmer untuk mengganti harga atau teks.</p>
+  </div>
+
+  <table>
+    <tr><th style="width:45mm">Bagian</th><th style="width:55mm">Alamat</th><th>Siapa yang memakai</th></tr>
+    <tr><td>Website publik</td><td>alamat-domain/</td><td>Semua orang</td></tr>
+    <tr><td>Akun pelanggan</td><td>alamat-domain/akun</td><td>Tamu yang mendaftar (gratis)</td></tr>
+    <tr><td>Admin panel</td><td>alamat-domain/kelola</td><td>Tim resort, sesuai peran (Owner, Admin, Sales, Front Office)</td></tr>
+  </table>
+  <p class="kecil">Alamat admin sengaja bukan "/admin". Bagian "kelola" bisa diganti oleh pengelola server.</p>
+</section>
+
+<!-- ============================== 2. FITUR TAMU (1) ============================== -->
+<section class="page" id="tamu">
+  <p class="eyebrow">Bagian 2 · Website publik</p>
+  <h1>Fitur untuk tamu</h1>
+  <p class="lead">Menu utama: Menginap · Acara &amp; Rombongan · Aktivitas · Kuliner · Galeri · Lokasi &amp; Kontak, ditambah tombol <span class="ui">Pesan</span>.</p>
+
+  <div class="side">
+    <figure><div class="shot" style="max-height:78mm"><img src="panduan/gambar/p01-beranda.jpg" alt="Beranda"></div>
+      <figcaption><b>Beranda.</b> Foto utama, kotak cek ketersediaan, dan jalan pintas sesuai rencana kunjungan.</figcaption></figure>
+    <figure><div class="shot" style="max-height:78mm"><img src="panduan/gambar/p02-beranda-hp.jpg" alt="Beranda di HP"></div>
+      <figcaption><b>Di HP.</b> Tampilan menyesuaikan layar.</figcaption></figure>
+  </div>
+
+  <h2>Beranda</h2>
+  <p>Menjelaskan resort secara singkat: akomodasi, acara rombongan, aktivitas (dengan harga), kuliner, lokasi dan kontak. Tamu bisa langsung mengisi tanggal di kotak ketersediaan lalu menekan cek. Bila sudah ada ulasan yang disetujui, rata-rata rating resort tampil di bawah kotak itu.</p>
+
+  <h2>Menginap (daftar akomodasi)</h2>
+  <figure><div class="shot" style="max-height:62mm"><img src="panduan/gambar/p03-akomodasi.jpg" alt="Daftar akomodasi"></div>
+    <figcaption><b>/akomodasi.</b> Dikelompokkan: Kamar &amp; glamping, Tenda, Area camping. Ada tabel perbandingan.</figcaption></figure>
+  <p>Setiap akomodasi menampilkan foto, kapasitas, tempat tidur, sarapan, dan harga mulai per malam. Tamu yang sudah masuk akun bisa menyimpan akomodasi favorit (ikon hati), yang nanti tampil di menu <b>Tersimpan</b> akunnya.</p>
+  <p><span class="tag t-ok">Berjalan</span> Tampilan diambil dari data di admin <b>Tipe Unit &amp; Harga</b>. Camp Site dan Kavling Campervan saat ini tidak bisa dipesan online (pemesanan lewat WhatsApp) karena kapasitasnya belum dikonfirmasi resort.</p>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 2. FITUR TAMU (2) ============================== -->
+<section class="page">
+  <h2 style="margin-top:0">Detail akomodasi</h2>
+  <div class="side">
+    <figure style="margin-top:0"><div class="shot" style="max-height:56mm"><img src="panduan/gambar/p04-akomodasi-detail.jpg" alt="Detail akomodasi"></div>
+      <figcaption><b>Detail akomodasi.</b> Galeri foto, deskripsi, fasilitas, harga weekday/weekend, kotak pesan.</figcaption></figure>
+    <div>
+      <p>Berisi galeri foto (bisa diperbesar), deskripsi, fasilitas, isi sarapan, serta <b>harga weekday dan weekend</b>.</p>
+      <p>Di panel kanan tamu memilih tanggal untuk langsung memesan. Di bagian bawah ada <b>ulasan khusus akomodasi itu</b>.</p>
+    </div>
+  </div>
+
+  <h2>Aktivitas</h2>
+  <div class="side-l">
+    <figure style="margin-top:0"><div class="shot" style="max-height:42mm"><img src="panduan/gambar/p05-aktivitas.jpg" alt="Tabel aktivitas"></div>
+      <figcaption><b>Aktivitas.</b> Tabel harga aktivitas dari admin.</figcaption></figure>
+    <div>
+      <p>Halaman Aktivitas menampilkan program petualangan dan budaya, plus <b>tabel harga aktivitas</b> (termasuk apa, minimal peserta, harga per orang). Bila aktivitas sudah punya ulasan, rating singkatnya tampil di tabel.</p>
+      <p class="kecil">Aktivitas tidak dipesan sendiri secara online. Aktivitas ditambahkan lewat <b>Rancang Paket</b> (rombongan) atau ditanyakan lewat WhatsApp.</p>
+    </div>
+  </div>
+
+  <h2>Acara &amp; Rombongan, dan Rancang Paket</h2>
+  <div class="grid2">
+    <figure style="margin-top:0"><div class="shot" style="max-height:42mm"><img src="panduan/gambar/p06-rombongan.jpg" alt="Paket rombongan"></div>
+      <figcaption><b>Paket fullboard per orang</b> (varian A/B/C, harga weekday/weekend).</figcaption></figure>
+    <figure style="margin-top:0"><div class="shot" style="max-height:42mm"><img src="panduan/gambar/p07-rancang-paket.jpg" alt="Rancang paket"></div>
+      <figcaption><b>Rancang Paket.</b> Instansi menyusun paket sendiri dan menerima proposal PDF.</figcaption></figure>
+  </div>
+  <p>Instansi/sekolah/kantor memilih paket, jumlah peserta, tanggal, menu, aktivitas, dan item tambahan. Website langsung menghitung <b>estimasi biaya</b> dan memeriksa aturan (mis. minimal peserta). Setelah dikirim, sistem membuat <b>nomor penawaran</b> dan proposal PDF, lalu penawaran muncul di admin <b>Penawaran B2B</b> untuk ditindaklanjuti sales. Halaman ini tidak memerlukan akun.</p>
+  <p><span class="tag t-ok">Berjalan</span> <span class="tag t-cek">Perlu dicek</span> Proposal juga dikirim ke email klien. Pengiriman email sungguhan bergantung pada pengaturan email di server.</p>
+
+  <h2>Kuliner, Galeri, Artikel, Lokasi &amp; Kontak</h2>
+  <p><b>Kuliner</b> menampilkan Swaka Cafe &amp; Resto dan Menu Makan A–E. <b>Galeri</b> dan <b>Artikel</b> dikelola dari admin. <b>Lokasi &amp; Kontak</b> berisi rute, tautan Google Maps/Waze, FAQ, dan <b>form pertanyaan</b> yang masuk ke admin <b>Pesan Masuk</b>. Tombol <b>WhatsApp</b> di banyak halaman membuka chat ke nomor resort.</p>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 2. FITUR TAMU (3): PESAN ============================== -->
+<section class="page">
+  <h2 style="margin-top:0">Pemesanan online (menu Pesan)</h2>
+  <figure style="margin-top:1mm"><div class="shot" style="max-height:82mm"><img src="panduan/gambar/p08-pesan.jpg" alt="Pemesanan langkah 2"></div>
+    <figcaption><b>Langkah 2 dari 4.</b> Akomodasi yang tersedia untuk tanggal pilihan, harga total, dan jumlah unit. Ringkasan pesanan di kanan.</figcaption></figure>
+
+  <p>Pemesanan terdiri dari 4 langkah:</p>
+  <ol class="langkah">
+    <li><b>Tanggal &amp; tamu.</b> Tamu memilih check-in, check-out, dan jumlah tamu.</li>
+    <li><b>Akomodasi.</b> Website hanya menampilkan unit yang masih tersedia pada tanggal itu, lengkap dengan harga. Tamu memilih jumlah unit dan boleh memasukkan <b>kode promo</b>.</li>
+    <li><b>Data pemesan.</b> Nama, nomor WhatsApp, email, permintaan khusus, cara bayar (DP atau lunas), lalu <b>Periksa pesanan Anda</b>. Langkah ini <b>wajib masuk akun</b>; tamu yang belum punya akun diarahkan untuk masuk/daftar, dan pilihannya tidak hilang.</li>
+    <li><b>Pembayaran.</b> Booking dibuat, unit ditahan selama <b>60 menit</b>, dan tamu diarahkan ke halaman pembayaran.</li>
+  </ol>
+
+  <div class="grid2">
+    <div class="kotak">
+      <p class="kotak-judul">Harga selalu dihitung ulang oleh sistem</p>
+      <p>Tarif per malam mengikuti malam weekday, weekend, dan musim ramai yang diatur di admin, dikurangi promo bila ada. Harga tidak bisa diubah dari browser tamu.</p>
+    </div>
+    <div class="kotak">
+      <p class="kotak-judul">Tidak ada pesanan ganda</p>
+      <p>Bila dua orang memesan unit terakhir bersamaan, hanya satu yang berhasil. Klik dua kali tidak membuat dua booking.</p>
+    </div>
+  </div>
+
+  <table>
+    <tr><th style="width:48mm">Aturan saat ini</th><th>Nilai (bisa diubah di Pengaturan Umum)</th></tr>
+    <tr><td>Besar DP</td><td>25% dari total</td></tr>
+    <tr><td>Lama unit ditahan</td><td>60 menit setelah booking dibuat; lewat dari itu booking kedaluwarsa dan unit dilepas</td></tr>
+    <tr><td>Batas pelunasan</td><td>H-3 sebelum kedatangan. Pemesanan yang kurang dari 3 hari sebelum kedatangan wajib bayar lunas</td></tr>
+    <tr><td>Booking terjauh</td><td>Sesuai "Booking paling jauh" (hari ke depan)</td></tr>
+    <tr><td>Batas per akun</td><td>Maksimal 3 booking yang belum dibayar sekaligus</td></tr>
+  </table>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 2. FITUR TAMU (4): AKUN ============================== -->
+<section class="page">
+  <h2 style="margin-top:0">Akun pelanggan</h2>
+  <p>Tamu mendaftar gratis dengan nama, email, dan password. Akun pelanggan <b>terpisah</b> dari akun staf dan tidak bisa membuka admin panel.</p>
+  <div class="grid2">
+    <figure><div class="shot" style="max-height:70mm"><img src="panduan/gambar/p10-akun-dasbor.jpg" alt="Dasbor akun"></div>
+      <figcaption><b>Ringkasan akun.</b> Tagihan yang perlu dibayar tampil paling atas.</figcaption></figure>
+    <figure><div class="shot" style="max-height:70mm"><img src="panduan/gambar/p11-akun-booking-detail.jpg" alt="Detail booking di akun"></div>
+      <figcaption><b>Detail booking.</b> Status, langkah berikutnya, rincian, riwayat pembayaran.</figcaption></figure>
+  </div>
+  <table>
+    <tr><th style="width:42mm">Menu akun</th><th>Isi</th></tr>
+    <tr><td>Ringkasan</td><td>Booking berikutnya, tagihan yang perlu dibayar, booking terbaru.</td></tr>
+    <tr><td>Booking Saya</td><td>Semua booking (akan datang, selesai, dibatalkan). Booking berbingkai emas berarti ada tagihan. Ada juga <b>Tambahkan booking lama</b>: menautkan booking yang dibuat tanpa akun (mis. lewat staf) dengan kode booking + nomor WhatsApp.</td></tr>
+    <tr><td>Tersimpan</td><td>Akomodasi favorit.</td></tr>
+    <tr><td>Profil Saya</td><td>Nama, WhatsApp, email, ganti password.</td></tr>
+  </table>
+  <p class="kecil">Booking milik akun hanya bisa dibuka pemiliknya. Bila orang lain membuka alamatnya, website menjawab "tidak ditemukan".</p>
+
+  <h2>Halaman status booking &amp; e-ticket</h2>
+  <div class="side">
+    <figure style="margin-top:0"><div class="shot" style="max-height:76mm"><img src="panduan/gambar/p12-status-booking.jpg" alt="Status booking"></div>
+      <figcaption><b>Menunggu pembayaran.</b> Hitung mundur waktu tahan, tombol bayar, tahapan booking.</figcaption></figure>
+    <div>
+      <ul>
+        <li><b>Hitung mundur</b> sisa waktu unit ditahan.</li>
+        <li>Tombol <span class="ui">Bayar DP …</span> / <span class="ui">Bayar Lunas …</span> / pelunasan, yang membuka jendela pembayaran Midtrans.</li>
+        <li><b>Tahapan booking:</b> Pesanan dibuat → Bayar DP → Pelunasan (dengan batas tanggal) → Check-in.</li>
+        <li>Setelah pembayaran pertama terverifikasi: <b>e-ticket</b> berkode QR tampil dan bisa diunduh sebagai PDF untuk ditunjukkan saat check-in.</li>
+      </ul>
+      <p class="kecil">Bila pembayaran online belum diaktifkan di server, halaman ini menampilkan instruksi transfer ke rekening dari Pengaturan Umum.</p>
+    </div>
+  </div>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 2. FITUR TAMU (5): ULASAN ============================== -->
+<section class="page">
+  <h2 style="margin-top:0">Ulasan &amp; rating</h2>
+  <p>Hanya tamu yang <b>sudah check-in</b> (dicatat staf) dan <b>tanggal check-out-nya sudah tiba</b> yang bisa menulis ulasan, dari akunnya sendiri. Tamu yang sudah membayar tetapi tidak datang tidak bisa mengulas.</p>
+  <div class="grid2">
+    <figure><div class="shot" style="max-height:70mm"><img src="panduan/gambar/p11b-akun-ulasan.jpg" alt="Ulasan Anda di detail booking"></div>
+      <figcaption><b>Ulasan Anda</b> di detail booking: apa saja yang bisa diulas dan statusnya.</figcaption></figure>
+    <figure><div class="shot" style="max-height:70mm"><img src="panduan/gambar/p14-ulasan-form.jpg" alt="Form ulasan"></div>
+      <figcaption><b>Form ulasan:</b> bintang 1–5 (wajib), cerita (opsional), foto (opsional, maks. 4).</figcaption></figure>
+  </div>
+  <ul>
+    <li>Yang bisa diulas: <b>resort secara umum</b>, <b>akomodasi</b> yang dipesan, serta <b>paket dan aktivitas</b> dari booking rombongan. Satu ulasan per booking untuk setiap hal.</li>
+    <li>Ulasan baru berstatus <b>Menunggu persetujuan</b> dan <b>tidak tampil</b> sampai disetujui tim resort.</li>
+    <li>Nama yang tampil disingkat, misalnya "Budi S.". Foto diberi label "Foto dari tamu"; data lokasi di dalam foto dihapus otomatis.</li>
+    <li>Tamu boleh mengubah atau menghapus ulasannya. Ulasan yang diubah kembali menunggu persetujuan.</li>
+  </ul>
+  <figure><div class="shot" style="max-height:58mm"><img src="panduan/gambar/p15-ulasan-publik.jpg" alt="Halaman ulasan"></div>
+    <figcaption><b>/ulasan.</b> Rata-rata, jumlah, sebaran bintang, dan daftar ulasan (bisa diurutkan dan disaring).</figcaption></figure>
+  <div class="kotak emas"><p>Rating di website <b>dihitung dari ulasan yang sudah disetujui saja</b>. Bila belum ada, website tidak menampilkan angka apa pun (tidak ada rating bawaan).</p></div>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 3. ALUR PEMESANAN ============================== -->
+<section class="page" id="alur-booking">
+  <p class="eyebrow">Bagian 3</p>
+  <h1>Alur pemesanan</h1>
+  <p class="lead">Dari tamu melihat website sampai booking selesai, sesuai cara kerja sistem saat ini.</p>
+
+  <div class="alur">
+    <div class="alur-baris">
+      <div class="langkah-box"><b><span class="nomor">1</span>Melihat website</b>Beranda, akomodasi, harga.</div><div class="panah">→</div>
+      <div class="langkah-box"><b><span class="nomor">2</span>Pilih tanggal &amp; tamu</b>Menu Pesan / kotak ketersediaan.</div><div class="panah">→</div>
+      <div class="langkah-box"><b><span class="nomor">3</span>Pilih akomodasi</b>Hanya yang tersedia. Kode promo opsional.</div>
+    </div>
+    <div class="panah-bawah">↓</div>
+    <div class="alur-baris">
+      <div class="langkah-box emas"><b><span class="nomor">4</span>Masuk / daftar akun</b>Wajib sebelum mengisi data. Pilihan tidak hilang.</div><div class="panah">→</div>
+      <div class="langkah-box"><b><span class="nomor">5</span>Data &amp; cara bayar</b>DP 25% atau lunas, lalu periksa pesanan.</div><div class="panah">→</div>
+      <div class="langkah-box gelap"><b><span class="nomor">6</span>Booking dibuat</b>Status <i>Menunggu Pembayaran</i>. Unit ditahan 60 menit.</div>
+    </div>
+    <div class="panah-bawah">↓ <span class="kecil" style="font-weight:600">tamu membayar (lihat Bagian 4)</span></div>
+    <div class="cabang">
+      <div class="langkah-box ok"><b>Bayar DP berhasil</b>Status <i>DP Dibayar</i>. Unit dikunci. E-ticket terbit. Sisa dibayar paling lambat H-3.</div>
+      <div class="langkah-box ok"><b>Bayar lunas berhasil</b>Status <i>Lunas</i>. Unit dikunci. E-ticket terbit.</div>
+      <div class="langkah-box no"><b>Tidak dibayar dalam 60 menit</b>Status <i>Kedaluwarsa</i>. Unit dilepas otomatis, tidak ada tagihan.</div>
+    </div>
+    <div class="panah-bawah">↓</div>
+    <div class="alur-baris">
+      <div class="langkah-box"><b><span class="nomor">7</span>Pelunasan</b>Tamu membayar sisa lewat halaman booking, atau staf mencatat transfer. Status menjadi <i>Lunas</i>.</div><div class="panah">→</div>
+      <div class="langkah-box gelap"><b><span class="nomor">8</span>Check-in di resort</b>Staf menekan <span class="ui" style="color:#fff">Check-in</span> (hanya untuk booking lunas). Status <i>Sudah Check-in</i>.</div><div class="panah">→</div>
+      <div class="langkah-box emas"><b><span class="nomor">9</span>Setelah menginap</b>Tamu bisa menulis ulasan dari akunnya.</div>
+    </div>
+  </div>
+
+  <h2>Penjelasan singkat</h2>
+  <ul>
+    <li><b>Unit ditahan, bukan langsung terjual.</b> Selama 60 menit unit tidak bisa dipesan orang lain. Bila tamu tidak membayar, sistem melepasnya otomatis. Pelepasan otomatis membutuhkan penjadwal (cron) aktif di server.</li>
+    <li><b>Pengingat pelunasan</b> dikirim lewat email H-7 dan H-4 untuk booking DP <span class="tag t-cek">Perlu dicek</span>. Ini bergantung pada email dan penjadwal di server.</li>
+    <li><b>Pembatalan</b> hanya dilakukan staf berizin dari admin (tombol <span class="ui">Batalkan</span>). Unit kembali tersedia. Pengembalian uang <b>tidak diproses otomatis</b> oleh website; dilakukan manual oleh resort sesuai kebijakan resort.</li>
+    <li><b>Booking dari staf</b> (telepon, walk-in) dan <b>rombongan</b> (dari penawaran B2B) mengikuti status dan pembayaran yang sama.</li>
+  </ul>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 4. ALUR PEMBAYARAN ============================== -->
+<section class="page" id="alur-bayar">
+  <p class="eyebrow">Bagian 4</p>
+  <h1>Alur pembayaran</h1>
+  <p class="lead">Website menerima dua jalur pembayaran: <b>online lewat Midtrans</b> dan <b>transfer manual</b> yang dicatat staf.</p>
+
+  <div class="kotak">
+    <p class="kotak-judul">Apa itu Midtrans?</p>
+    <p>Layanan pembayaran pihak ketiga yang memproses transaksi online. Tamu membayar di jendela Midtrans, lalu Midtrans memberi tahu website. Website tidak menyimpan data kartu atau rekening tamu.</p>
+  </div>
+
+  <div class="alur">
+    <div class="alur-baris">
+      <div class="langkah-box emas"><b>Tamu</b>Menekan tombol <i>Bayar DP / Lunas / Pelunasan</i> di halaman booking.</div><div class="panah">→</div>
+      <div class="langkah-box"><b>Website</b>Menghitung tagihan dari booking (bukan dari browser) dan membuka jendela Midtrans.</div><div class="panah">→</div>
+      <div class="langkah-box gelap"><b>Midtrans</b>Tamu memilih cara bayar dan menyelesaikan pembayaran.</div>
+    </div>
+    <div class="panah-bawah">↓</div>
+    <div class="alur-baris">
+      <div class="langkah-box"><b>Website menerima kabar</b>Dicek keasliannya, nomor pesanan dan nominal dicocokkan, lalu status ditanyakan ulang ke Midtrans.</div><div class="panah">→</div>
+      <div class="langkah-box ok"><b>Status diperbarui</b>Pembayaran <i>Berhasil</i>, booking menjadi <i>DP Dibayar</i> atau <i>Lunas</i>. E-ticket dan email terkirim.</div><div class="panah">→</div>
+      <div class="langkah-box"><b>Admin panel</b>Pembayaran tampil di Riwayat Pembayaran booking dan di Laporan.</div>
+    </div>
+  </div>
+
+  <h2>Hal penting tentang status</h2>
+  <table>
+    <tr><th style="width:50mm">Situasi</th><th>Yang terjadi di website</th></tr>
+    <tr><td>Pembayaran berhasil</td><td>Booking otomatis berubah status; tidak pernah tercatat dobel.</td></tr>
+    <tr><td>Menunggu (mis. virtual account belum ditransfer)</td><td>Pembayaran berstatus <i>Menunggu</i>; halaman booking meminta tamu menyelesaikan pembayaran sebelum batas waktu.</td></tr>
+    <tr><td>Gagal / kedaluwarsa</td><td>Pembayaran ditandai <i>Gagal</i> atau <i>Kedaluwarsa</i>. Booking tetap <i>Menunggu Pembayaran</i> sampai waktu tahan habis, lalu menjadi <i>Kedaluwarsa</i>.</td></tr>
+    <tr><td>Jendela pembayaran ditutup tamu</td><td>Muncul pesan "Jendela pembayaran ditutup" dan tombol <span class="ui">Coba bayar lagi</span>.</td></tr>
+    <tr><td>Kabar dari Midtrans terlambat</td><td>Website mengecek ulang ke Midtrans saat tamu kembali ke halaman booking, dan otomatis tiap 5 menit (perlu penjadwal aktif di server).</td></tr>
+    <tr><td>Dibayar setelah waktu tahan habis</td><td>Bila unit masih tersedia, booking dipulihkan. Bila sudah diambil tamu lain, pembayaran ditandai <b>"PERLU TINDAKAN"</b> dan muncul di Dasbor › Perlu tindakan untuk diproses manual (hubungi tamu / refund manual).</td></tr>
+  </table>
+
+  <h2>Transfer manual</h2>
+  <p>Tamu mentransfer ke rekening resort dan konfirmasi lewat WhatsApp. Staf menekan <span class="ui">Catat pembayaran</span> di booking itu, mengisi nominal, dan <b>wajib mengunggah bukti transfer</b>. Status booking berubah otomatis (lihat Bagian 8).</p>
+
+  <div class="kotak merah">
+    <p class="kotak-judul">Status Midtrans saat ini: mode uji coba (sandbox)</p>
+    <p>Pembayaran online sudah diuji dalam <b>mode uji coba</b> (kartu uji Midtrans), tetapi <b>uang sungguhan belum bisa diterima</b> sampai resort memiliki akun Midtrans produksi yang disetujui dan kuncinya dipasang di server. Cara bayar yang muncul (website menyebut QRIS, virtual account, e-wallet) ditentukan pengaturan akun Midtrans resort. Jendela Midtrans tidak difoto karena tidak terbuka di browser otomatis saat panduan dibuat.</p>
+  </div>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 5. STATUS ============================== -->
+<section class="page" id="status">
+  <p class="eyebrow">Bagian 5</p>
+  <h1>Daftar status booking &amp; pembayaran</h1>
+  <p class="lead">Status <b>booking</b> dan status <b>pembayaran</b> dicatat terpisah. Satu booking bisa punya beberapa pembayaran (mis. DP lalu pelunasan).</p>
+
+  <h2>Status booking</h2>
+  <table>
+    <tr><th style="width:40mm">Status (di layar)</th><th>Artinya</th><th style="width:52mm">Yang terlihat</th></tr>
+    <tr><td><span class="tag t-cek">Menunggu Pembayaran</span></td><td>Booking dibuat, unit sedang ditahan (60 menit), belum ada pembayaran.</td><td>Tab <i>Menunggu bayar</i> di admin; hitung mundur di halaman tamu.</td></tr>
+    <tr><td><span class="tag t-info">DP Dibayar</span></td><td>Pembayaran pertama (DP) terverifikasi. Unit terkunci, e-ticket terbit, masih ada sisa tagihan.</td><td>Tab <i>Menunggu pelunasan</i>; "Sisa tagihan" dan "Batas pelunasan".</td></tr>
+    <tr><td><span class="tag t-ok">Lunas</span></td><td>Seluruh total sudah dibayar.</td><td>Tombol <span class="ui">Check-in</span> muncul di admin.</td></tr>
+    <tr><td><span class="tag t-ok">Sudah Check-in</span></td><td>Tamu sudah datang dan dicatat staf. Status akhir.</td><td>Tamu bisa menulis ulasan setelah tanggal check-out.</td></tr>
+    <tr><td><span class="tag t-abu">Kedaluwarsa</span></td><td>Tidak dibayar dalam waktu tahan. Unit dilepas. Status akhir.</td><td>Tamu bisa memesan ulang.</td></tr>
+    <tr><td><span class="tag t-no">Dibatalkan</span></td><td>Dibatalkan staf berizin (dengan alasan). Unit kembali tersedia. Status akhir.</td><td>Alasan pembatalan tercatat.</td></tr>
+  </table>
+  <p class="kecil">Status akhir tidak bisa diubah lagi. Booking juga tidak bisa diedit langsung; perubahan hanya lewat tombol aksi di halaman detail booking.</p>
+
+  <h2>Status pembayaran</h2>
+  <table>
+    <tr><th style="width:40mm">Status</th><th>Artinya</th></tr>
+    <tr><td><span class="tag t-cek">Menunggu</span></td><td>Transaksi Midtrans sudah dibuat, tamu belum menyelesaikan pembayaran.</td></tr>
+    <tr><td><span class="tag t-ok">Berhasil</span></td><td>Uang diterima dan terverifikasi (Midtrans atau transfer yang dicatat staf). Hanya status ini yang dihitung sebagai uang masuk.</td></tr>
+    <tr><td><span class="tag t-no">Gagal</span></td><td>Ditolak / dibatalkan di Midtrans.</td></tr>
+    <tr><td><span class="tag t-abu">Kedaluwarsa</span></td><td>Batas waktu bayar di Midtrans habis.</td></tr>
+  </table>
+
+  <div class="grid2">
+    <div>
+      <h3>Jenis pembayaran</h3>
+      <table>
+        <tr><th>Jenis</th><th>Artinya</th></tr>
+        <tr><td>DP</td><td>Uang muka (25%).</td></tr>
+        <tr><td>Pelunasan</td><td>Sisa setelah DP.</td></tr>
+        <tr><td>Lunas Langsung</td><td>Sekali bayar penuh.</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Metode &amp; sumber booking</h3>
+      <table>
+        <tr><th>Label</th><th>Artinya</th></tr>
+        <tr><td>Midtrans</td><td>Dibayar online.</td></tr>
+        <tr><td>Transfer Manual</td><td>Dicatat staf + bukti.</td></tr>
+        <tr><td>Website / Input Manual / B2B</td><td>Asal booking.</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 6. ADMIN: MASUK & MENU ============================== -->
+<section class="page" id="admin">
+  <p class="eyebrow">Bagian 6 · Admin panel</p>
+  <h1>Masuk ke admin panel</h1>
+  <div class="grid2">
+    <figure><div class="shot" style="max-height:52mm"><img src="panduan/gambar/a01-login.jpg" alt="Login admin"></div><figcaption><b>Halaman masuk</b> di alamat-domain/kelola.</figcaption></figure>
+    <figure><div class="shot" style="max-height:52mm"><img src="panduan/gambar/a02-2fa.jpg" alt="Kode 2FA"></div><figcaption><b>Kode 6 angka</b> dari aplikasi authenticator.</figcaption></figure>
+  </div>
+  <ol class="langkah">
+    <li>Buka <b>alamat-domain/kelola</b>, isi email dan password akun staf.</li>
+    <li>Saat pertama kali masuk, pasang aplikasi authenticator (mis. Google Authenticator) di HP dan pindai kode QR yang muncul. Ini wajib untuk semua staf.</li>
+    <li>Setiap masuk berikutnya, isi kode 6 angka dari aplikasi tersebut.</li>
+  </ol>
+  <p class="kecil">Akun staf dibuat oleh Owner di menu Pengguna. Bila HP hilang, Owner bisa mereset 2FA staf.</p>
+
+  <h2>Peta menu</h2>
+  <table>
+    <tr><th style="width:38mm">Kelompok</th><th>Menu (sesuai layar)</th></tr>
+    <tr><td>—</td><td><b>Dasbor</b>: hal yang perlu ditindaklanjuti, ringkasan angka, kedatangan 7 hari.</td></tr>
+    <tr><td>Operasional Harian</td><td><b>Kalender Okupansi</b> · <b>Booking</b> · <b>Pelanggan</b> · <b>Penawaran B2B</b> · <b>Pesan Masuk</b> · <b>Ulasan Tamu</b></td></tr>
+    <tr><td>Akomodasi &amp; Harga</td><td><b>Tipe Unit &amp; Harga</b> · <b>Hari Libur &amp; Musim Ramai</b> · <b>Kode Promo</b></td></tr>
+    <tr><td>Paket Rombongan</td><td><b>Paket Group</b> · <b>Menu Makan A-E</b> · <b>Aktivitas</b> · <b>Item Tambahan</b></td></tr>
+    <tr><td>Konten Website</td><td><b>Artikel</b> · <b>Galeri</b> · <b>Play, Learn &amp; Gather</b> · <b>Halaman</b> · <b>FAQ</b> · <b>Banner Promo</b></td></tr>
+    <tr><td>Laporan &amp; Pengaturan</td><td><b>Laporan</b> · <b>Pengaturan Umum</b> · <b>Pengguna</b> · <b>Log Aktivitas</b> · <b>Log Webhook Midtrans</b> · Role &amp; Hak Akses</td></tr>
+  </table>
+  <ul class="kecil">
+    <li>Menu yang terlihat tergantung peran staf (lihat Bagian 14). Angka kecil di samping menu = jumlah yang perlu ditindaklanjuti.</li>
+    <li>Kotak <b>Cari</b> di kanan atas (atau Ctrl+K) mencari booking, pelanggan, dll. Panah di kiri atas menciutkan menu samping.</li>
+  </ul>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 7. DASBOR ============================== -->
+<section class="page" id="dasbor">
+  <p class="eyebrow">Bagian 7</p>
+  <h1>Dasbor</h1>
+  <figure><div class="shot" style="max-height:118mm"><img src="panduan/gambar/a03-dasbor.jpg" alt="Dasbor admin"></div>
+    <figcaption><b>Dasbor.</b> Nama pemesan selain data contoh disamarkan (••••).</figcaption></figure>
+  <h2>Perlu tindakan</h2>
+  <p>Kotak-kotak yang hanya muncul bila ada yang harus dikerjakan. Klik kotak untuk membuka daftar terkait. Diperbarui tiap menit.</p>
+  <table>
+    <tr><th style="width:56mm">Kotak</th><th>Artinya</th></tr>
+    <tr><td>Pembayaran perlu tindakan</td><td>Tamu membayar setelah unitnya terlanjur terjual: hubungi tamu / refund manual.</td></tr>
+    <tr><td>Pelunasan lewat batas</td><td>Booking DP yang melewati batas pelunasan.</td></tr>
+    <tr><td>Tiba ≤ 3 hari, belum lunas</td><td>Ingatkan tamu atau siapkan penagihan saat check-in.</td></tr>
+    <tr><td>Menunggu pembayaran</td><td>Booking online yang unitnya sedang ditahan.</td></tr>
+    <tr><td>Penawaran B2B baru · Pesan masuk baru · Ulasan menunggu persetujuan</td><td>Belum ditindaklanjuti.</td></tr>
+  </table>
+  <h2>Ringkasan &amp; Kedatangan 7 hari ke depan</h2>
+  <p>Okupansi malam ini, check-in/check-out hari ini, <b>Uang diterima</b> bulan ini, <b>Nilai booking terkonfirmasi</b> bulan ini, <b>Sisa tagihan</b> booking DP, serta daftar tamu yang tiba dalam 7 hari dengan sisa tagihannya. Arti tiap angka dijelaskan di Bagian 13.</p>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 8. BOOKING ============================== -->
+<section class="page" id="booking">
+  <p class="eyebrow">Bagian 8 · Operasional Harian › Booking</p>
+  <h1>Mengelola booking &amp; pembayaran</h1>
+  <figure><div class="shot" style="max-height:84mm"><img src="panduan/gambar/a04-booking-daftar.jpg" alt="Daftar booking"></div>
+    <figcaption><b>Daftar booking</b> dengan tab: Semua · Menunggu bayar · Menunggu pelunasan · Check-in hari ini · Mendatang.</figcaption></figure>
+  <figure><div class="shot" style="max-height:92mm"><img src="panduan/gambar/a05-booking-detail.jpg" alt="Detail booking"></div>
+    <figcaption><b>Detail booking</b>: ringkasan, pemesan, rincian harga per malam, pembayaran, sisa tagihan, batas pelunasan.</figcaption></figure>
+  <div class="grid2">
+    <div>
+      <h3 style="margin-top:0">Mencari booking</h3>
+      <ol class="langkah">
+        <li>Buka <b>Booking</b>, pilih tab yang sesuai.</li>
+        <li>Ketik kode booking, nama, atau nomor HP di kotak cari tabel.</li>
+        <li>Klik baris untuk membuka detail.</li>
+      </ol>
+      <p class="kecil">Di bawah detail ada <b>Riwayat Pembayaran</b> (waktu, jenis, metode, nominal, status, dicatat oleh, bukti).</p>
+    </div>
+    <div>
+      <h3 style="margin-top:0">Tombol di halaman detail</h3>
+      <table>
+        <tr><th>Tombol</th><th>Muncul bila</th></tr>
+        <tr><td>Catat pembayaran</td><td>Menunggu Pembayaran / DP Dibayar</td></tr>
+        <tr><td>Check-in</td><td>Lunas</td></tr>
+        <tr><td>Batalkan</td><td>Belum status akhir, dan staf punya izin batal</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 8b. LANGKAH BOOKING ============================== -->
+<section class="page">
+  <h2 style="margin-top:0">Langkah: mencatat transfer manual</h2>
+  <div class="side">
+    <figure style="margin-top:0"><div class="shot" style="max-height:60mm"><img src="panduan/gambar/a06-catat-pembayaran.jpg" alt="Catat transfer manual"></div>
+      <figcaption><b>Catat transfer manual.</b> Nominal terisi otomatis dengan sisa tagihan.</figcaption></figure>
+    <ol class="langkah">
+      <li>Buka detail booking, tekan <span class="ui">Catat pembayaran</span>.</li>
+      <li>Periksa <b>Nominal diterima</b> (sesuaikan dengan uang yang benar-benar masuk).</li>
+      <li>Unggah <b>Bukti transfer</b> (wajib) dan isi <b>Catatan</b>, mis. "Transfer Mandiri a.n. Budi".</li>
+      <li>Tekan <span class="ui">Kirim</span>. Status booking berubah otomatis menjadi DP Dibayar atau Lunas.</li>
+    </ol>
+  </div>
+  <p class="kecil">Pembayaran tidak bisa dihapus oleh siapa pun, supaya catatan uang tetap utuh. Bukti transfer hanya bisa dibuka staf yang masuk.</p>
+
+  <h2>Langkah: check-in tamu</h2>
+  <ol class="langkah">
+    <li>Tamu datang dan menunjukkan e-ticket (atau sebut kode booking). Cari bookingnya.</li>
+    <li>Pastikan status <b>Lunas</b>. Bila masih DP Dibayar, catat dulu pelunasannya.</li>
+    <li>Tekan <span class="ui">Check-in</span>, pilih unit fisik yang ditempati (opsional), lalu konfirmasi. Status menjadi <b>Sudah Check-in</b>.</li>
+  </ol>
+
+  <h2>Langkah: membatalkan booking</h2>
+  <ol class="langkah">
+    <li>Buka detail booking, tekan <span class="ui">Batalkan</span>, isi <b>Alasan pembatalan</b>.</li>
+    <li>Unit langsung tersedia lagi. Bila tamu sudah membayar, pengembalian dana diurus manual di luar website.</li>
+  </ol>
+
+  <h2>Langkah: memasukkan reservasi telepon / walk-in</h2>
+  <div class="side">
+    <figure style="margin-top:0"><div class="shot" style="max-height:62mm"><img src="panduan/gambar/a07-input-manual.jpg" alt="Input reservasi manual"></div>
+      <figcaption><b>Input Reservasi Manual.</b></figcaption></figure>
+    <ol class="langkah">
+      <li>Di <b>Booking</b>, tekan <span class="ui">Input reservasi manual</span>.</li>
+      <li>Isi data tamu, tanggal, jumlah tamu, dan akomodasi. Harga dan ketersediaan dicek sistem dengan aturan yang sama seperti website.</li>
+      <li>Simpan. Booking dibuat berstatus Menunggu Pembayaran dan unit ditahan selama waktu tahan (60 menit). Catat pembayarannya dengan <span class="ui">Catat pembayaran</span> sebelum waktu itu habis.</li>
+    </ol>
+  </div>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 9. HARGA ============================== -->
+<section class="page" id="harga">
+  <p class="eyebrow">Bagian 9 · Akomodasi &amp; Harga</p>
+  <h1>Akomodasi, harga, promo &amp; kalender</h1>
+  <div class="side">
+    <figure style="margin-top:0"><div class="shot" style="max-height:84mm"><img src="panduan/gambar/a10-tipe-unit-edit.jpg" alt="Ubah tipe unit"></div>
+      <figcaption><b>Ubah tipe unit:</b> Identitas, Foto, Kapasitas &amp; Stok, Fasilitas &amp; Status. Tab <b>Harga</b> dan <b>Unit Fisik</b> di bagian bawah.</figcaption></figure>
+    <div>
+      <h3 style="margin-top:0">Tipe Unit &amp; Harga</h3>
+      <p>Satu baris = satu jenis akomodasi (mis. Pangrango Deluxe). Isinya tampil langsung di website.</p>
+      <ul>
+        <li><b>Identitas:</b> nama di website, tagline, deskripsi.</li>
+        <li><b>Foto:</b> seret untuk mengubah urutan; foto pertama jadi sampul.</li>
+        <li><b>Kapasitas &amp; Stok:</b> stok harian (jumlah unit yang dijual per malam), kapasitas, sarapan.</li>
+        <li><b>Fasilitas &amp; Status:</b> fasilitas, <b>Aktif</b> (tampil/tidak), <b>Bisa dipesan online</b>.</li>
+        <li>Tab <b>Harga:</b> tarif weekday, weekend, dan musim ramai beserta masa berlakunya.</li>
+      </ul>
+    </div>
+  </div>
+  <h3>Langkah: mengubah harga atau deskripsi</h3>
+  <ol class="langkah">
+    <li>Buka <b>Tipe Unit &amp; Harga</b>, klik tipe unit yang ingin diubah.</li>
+    <li>Ubah teks/foto di bagian atas lalu tekan <span class="ui">Simpan</span>.</li>
+    <li>Untuk harga, gulir ke tab <b>Harga</b>, ubah atau tambah tarif (kategori, nominal, berlaku mulai/sampai), simpan.</li>
+    <li>Buka halaman akomodasi di website untuk memastikan perubahan tampil. Booking yang sudah dibuat tidak ikut berubah harganya.</li>
+  </ol>
+  <div class="grid2">
+    <div>
+      <h3>Hari Libur &amp; Musim Ramai</h3>
+      <p>Menandai tanggal tertentu agar memakai tarif musim ramai (atau tarif weekend bila tarif khusus belum diisi). Malam yang dihitung weekend diatur di Pengaturan Umum.</p>
+      <h3>Kode Promo</h3>
+      <p>Buat kode diskon (persen atau nominal) dengan <b>Minimal transaksi</b>, <b>Kuota pemakaian</b>, <b>Berlaku mulai/sampai</b>, dan <b>Aktif</b>. Tamu memasukkannya saat memesan.</p>
+      <p class="kecil">Masa berlaku promo dihitung dari <b>tanggal tamu memesan</b>, bukan tanggal menginap.</p>
+    </div>
+    <figure style="margin-top:3mm"><div class="shot" style="max-height:56mm"><img src="panduan/gambar/a08-kalender.jpg" alt="Kalender okupansi"></div>
+      <figcaption><b>Kalender Okupansi:</b> terisi/ditahan/sisa per tipe unit per tanggal. Tombol <span class="ui">Blokir / buka tanggal</span> untuk perawatan atau unit yang terjual di luar website.</figcaption></figure>
+  </div>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 10. ROMBONGAN ============================== -->
+<section class="page" id="rombongan">
+  <p class="eyebrow">Bagian 10</p>
+  <h1>Paket rombongan, penawaran B2B &amp; pesan masuk</h1>
+  <div class="grid2">
+    <figure><div class="shot" style="max-height:46mm"><img src="panduan/gambar/a12-paket-group.jpg" alt="Paket group"></div><figcaption><b>Paket Group</b> dengan Varian A/B/C.</figcaption></figure>
+    <figure><div class="shot" style="max-height:46mm"><img src="panduan/gambar/a13-aktivitas.jpg" alt="Aktivitas"></div><figcaption><b>Aktivitas</b> dan harganya.</figcaption></figure>
+  </div>
+  <table>
+    <tr><th style="width:38mm">Menu</th><th>Isi &amp; kegunaan</th></tr>
+    <tr><td>Paket Group</td><td>Paket fullboard per orang. Tiap paket punya <b>Varian A/B/C</b>: minimal peserta, set menu, coffee break, harga weekday/weekend, "hanya weekday", isi paket.</td></tr>
+    <tr><td>Menu Makan A-E</td><td>Pilihan menu per waktu makan; dipakai di halaman Kuliner, Rancang Paket, dan proposal.</td></tr>
+    <tr><td>Aktivitas</td><td>Nama, kategori, harga, satuan, minimal peserta. Tampil di tabel halaman Aktivitas. Aktivitas yang sudah punya ulasan tidak bisa dihapus; nonaktifkan saja.</td></tr>
+    <tr><td>Item Tambahan</td><td>Aula, perlengkapan, konsumsi, dll. untuk Rancang Paket.</td></tr>
+  </table>
+
+  <h2>Penawaran B2B</h2>
+  <p>Setiap rancangan paket yang dikirim dari website menjadi penawaran dengan status <b>Baru → Dihubungi → Deal / Batal</b>.</p>
+  <ol class="langkah">
+    <li>Buka <b>Penawaran B2B</b>, tab <i>Baru</i>. Buka penawaran untuk melihat rincian, rencana menu, dan proposal PDF.</li>
+    <li>Tekan <span class="ui">Chat klien</span> untuk membuka WhatsApp (status otomatis menjadi Dihubungi).</li>
+    <li>Item bisa diubah selama belum menjadi booking; total dan PDF dihitung ulang.</li>
+    <li>Bila sepakat, <span class="ui">Konversi ke booking</span> (izin khusus Admin &amp; Owner), lalu <span class="ui">Kirim link pembayaran</span> lewat WhatsApp.</li>
+  </ol>
+
+  <h2>Pesan Masuk &amp; Pelanggan</h2>
+  <div class="side">
+    <div>
+      <p><b>Pesan Masuk</b> berisi pertanyaan dari form di halaman Kontak (nama, WhatsApp, topik, tanggal rencana, pesan). Status: Baru · Sedang dibalas · Selesai · Spam. Tombol <span class="ui">Balas via WhatsApp</span>, <span class="ui">Balas via email</span>, dan <span class="ui">Ubah status / catatan</span> (catatan internal tidak terlihat tamu). Pemberitahuan juga dikirim ke email resmi resort <span class="tag t-cek">Perlu dicek</span>.</p>
+      <p><b>Pelanggan</b> adalah daftar pemesan (nama, HP, email, instansi) beserta riwayat bookingnya; dibuat otomatis dari setiap booking.</p>
+    </div>
+    <figure style="margin-top:0"><div class="shot" style="max-height:44mm"><img src="panduan/gambar/a15-pesan-masuk.jpg" alt="Pesan masuk"></div><figcaption><b>Pesan Masuk.</b></figcaption></figure>
+  </div>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 11. ULASAN ============================== -->
+<section class="page" id="ulasan">
+  <p class="eyebrow">Bagian 11 · Operasional Harian › Ulasan Tamu</p>
+  <h1>Ulasan tamu</h1>
+  <figure><div class="shot" style="max-height:74mm"><img src="panduan/gambar/a16-ulasan-daftar.jpg" alt="Daftar ulasan"></div>
+    <figcaption><b>Daftar ulasan</b> per status: Menunggu persetujuan · Tayang · Ditolak · Disembunyikan · Semua. Bisa disaring menurut jenis, nilai, dan tanggal.</figcaption></figure>
+  <figure><div class="shot" style="max-height:76mm"><img src="panduan/gambar/a17-ulasan-detail.jpg" alt="Detail ulasan"></div>
+    <figcaption><b>Detail ulasan:</b> nilai, isi, foto, yang diulas (bisa diklik ke halaman publik), pengulas, booking, riwayat moderasi.</figcaption></figure>
+  <h3>Langkah: memeriksa ulasan baru</h3>
+  <ol class="langkah">
+    <li>Buka <b>Ulasan Tamu</b> (angka di menu = jumlah yang menunggu), klik ulasan.</li>
+    <li>Baca isi dan lihat foto. Pastikan tidak ada data pribadi, kata kasar, atau promosi pihak lain.</li>
+    <li>Pilih salah satu:
+      <ul>
+        <li><span class="ui">Setujui &amp; tayangkan</span>: ulasan tampil di website dan dihitung di rating.</li>
+        <li><span class="ui">Tolak</span>: isi alasan (catatan internal, wajib). Boleh menambah <b>Pesan untuk pelanggan</b> yang tampil di akun tamu.</li>
+      </ul></li>
+    <li>Untuk ulasan yang sudah tayang tersedia <span class="ui">Sembunyikan</span> (dengan alasan) dan, setelah itu, <span class="ui">Tayangkan lagi</span>.</li>
+  </ol>
+  <p class="kecil">Staf tidak bisa membuat, mengubah isi, atau menghapus ulasan; isi ulasan milik tamu. Catatan internal tidak pernah terlihat tamu atau publik.</p>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 12. KONTEN ============================== -->
+<section class="page" id="konten">
+  <p class="eyebrow">Bagian 12 · Konten Website</p>
+  <h1>Konten website &amp; pengaturan umum</h1>
+  <div class="grid2">
+    <figure><div class="shot" style="max-height:46mm"><img src="panduan/gambar/a20-galeri.jpg" alt="Galeri"></div><figcaption><b>Galeri.</b></figcaption></figure>
+    <figure><div class="shot" style="max-height:46mm"><img src="panduan/gambar/a24-artikel.jpg" alt="Artikel"></div><figcaption><b>Artikel:</b> tab Terbit · Terjadwal · Draf.</figcaption></figure>
+  </div>
+  <table>
+    <tr><th style="width:38mm">Menu</th><th>Yang diubah di website</th></tr>
+    <tr><td>Artikel</td><td>Kabar &amp; tips di /artikel. Bisa dijadwalkan terbit di tanggal tertentu.</td></tr>
+    <tr><td>Galeri</td><td>Foto di halaman Galeri (kategori, unggulan, urutan, aktif).</td></tr>
+    <tr><td>Play, Learn &amp; Gather</td><td>Program di halaman Aktivitas dan Acara &amp; Rombongan.</td></tr>
+    <tr><td>Halaman</td><td>Halaman info (mis. kebijakan privasi, cara pembayaran) dan teks/foto utama beranda (halaman "beranda").</td></tr>
+    <tr><td>FAQ</td><td>Pertanyaan umum di halaman Kontak.</td></tr>
+    <tr><td>Banner Promo</td><td>Pita penawaran di beranda, tampil hanya di tanggal berlaku.</td></tr>
+  </table>
+  <h3>Langkah umum mengubah konten</h3>
+  <ol class="langkah">
+    <li>Buka menu yang sesuai, klik baris yang ingin diubah (atau tombol buat baru di kanan atas).</li>
+    <li>Ubah teks/foto. Foto JPG/PNG/WebP otomatis diperkecil agar website tetap cepat.</li>
+    <li>Tekan <span class="ui">Simpan</span>, lalu buka halaman website untuk memeriksa hasilnya.</li>
+  </ol>
+
+  <h2>Pengaturan Umum</h2>
+  <div class="side">
+    <div>
+      <ul>
+        <li><b>Aturan Booking:</b> malam yang dihitung tarif weekend, besar DP, lama stok ditahan, batas pelunasan (H-), booking paling jauh.</li>
+        <li><b>Kontak Resort:</b> WhatsApp, telepon, Instagram, email resmi, situs, Facebook, YouTube, alamat, kata kunci Google Maps &amp; Waze. Dipakai di footer, halaman Kontak, dan tombol WhatsApp.</li>
+        <li><b>Rekening Transfer:</b> bank, atas nama, nomor rekening. Tampil di instruksi transfer.</li>
+      </ul>
+      <p class="kecil">Perubahan aturan berlaku untuk booking baru. Booking yang sudah ada tetap memakai nilai saat dibuat.</p>
+    </div>
+    <figure style="margin-top:0"><div class="shot" style="max-height:66mm"><img src="panduan/gambar/a19-pengaturan.jpg" alt="Pengaturan umum"></div><figcaption><b>Pengaturan Umum.</b></figcaption></figure>
+  </div>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 13. LAPORAN ============================== -->
+<section class="page" id="laporan">
+  <p class="eyebrow">Bagian 13 · Laporan &amp; Pengaturan › Laporan</p>
+  <h1>Laporan &amp; statistik</h1>
+  <div class="side">
+    <figure style="margin-top:0"><div class="shot" style="max-height:118mm"><img src="panduan/gambar/a18-laporan.jpg" alt="Laporan"></div>
+      <figcaption><b>Laporan:</b> grafik 30 hari, pilihan periode, ringkasan, pendapatan, sumber booking, okupansi per tipe unit.</figcaption></figure>
+    <div>
+      <p>Pilih periode dengan <b>Dari/Sampai</b> atau tombol <span class="ui">Bulan ini</span>, <span class="ui">Bulan lalu</span>, <span class="ui">30 hari terakhir</span>, <span class="ui">Tahun ini</span>.</p>
+      <p>Tombol <span class="ui">Ekspor Excel</span> mengunduh file berisi 4 lembar: <b>Ringkasan</b>, <b>Pembayaran</b>, <b>Booking</b>, <b>Okupansi</b>.</p>
+      <p class="kecil">Hanya Owner dan Admin yang bisa membuka Laporan.</p>
+    </div>
+  </div>
+  <h2>Membaca angka dengan benar</h2>
+  <table>
+    <tr><th style="width:48mm">Angka</th><th>Artinya</th></tr>
+    <tr><td>Pendapatan / Uang diterima</td><td><b>Uang yang benar-benar masuk</b>: pembayaran berstatus Berhasil (Midtrans + transfer), menurut tanggal diverifikasi. Dirinci per metode dan per jenis (DP, Pelunasan, Lunas Langsung).</td></tr>
+    <tr><td>Booking terkonfirmasi</td><td>Booking yang dibuat di periode itu dan sudah membayar minimal DP, dibanding semua booking yang dibuat ("6 / 18" = 6 dari 18). Konversi = persentasenya.</td></tr>
+    <tr><td>Nilai booking terkonfirmasi</td><td>Total nilai booking yang terkonfirmasi, <b>bukan uang masuk</b> (bisa masih ada sisa pelunasan).</td></tr>
+    <tr><td>Sisa tagihan (Dasbor)</td><td>Jumlah yang belum dibayar oleh booking berstatus DP Dibayar.</td></tr>
+    <tr><td>Okupansi</td><td>Unit-malam terjual dibanding kapasitas pada tanggal menginap di periode itu.</td></tr>
+    <tr><td>Sumber booking</td><td>Website, Input Manual, atau B2B (Penawaran), beserta jumlah status booking.</td></tr>
+  </table>
+  <div class="kotak emas"><p><b>Contoh:</b> booking Rp1.000.000 dengan DP Rp250.000 menambah <i>Nilai booking terkonfirmasi</i> Rp1.000.000, tetapi <i>Pendapatan</i> baru bertambah Rp250.000. Sisanya masuk ke <i>Pendapatan</i> saat pelunasan diterima.</p></div>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 14. KEAMANAN ============================== -->
+<section class="page" id="keamanan">
+  <p class="eyebrow">Bagian 14</p>
+  <h1>Pengguna, hak akses &amp; keamanan data</h1>
+  <table>
+    <tr><th style="width:30mm">Peran</th><th>Yang bisa dilakukan</th></tr>
+    <tr><td>Owner</td><td>Semua, termasuk mengelola pengguna &amp; role, dan mereset 2FA staf.</td></tr>
+    <tr><td>Admin</td><td>Semua operasional &amp; data master, laporan, konversi penawaran, moderasi ulasan. Tidak mengelola pengguna &amp; role.</td></tr>
+    <tr><td>Sales</td><td>Melihat semua data, mengelola booking &amp; pelanggan, menindaklanjuti penawaran dan pesan. Tidak bisa mengubah harga, menghapus, atau membatalkan. Ulasan hanya melihat.</td></tr>
+    <tr><td>Front Office</td><td>Input walk-in, catat pembayaran, check-in, kalender, pesan masuk. Harga hanya melihat.</td></tr>
+  </table>
+  <p class="kecil">Izin bisa diatur lebih rinci oleh Owner di menu Role &amp; Hak Akses. Hanya staf berizin khusus yang bisa membatalkan booking atau memblokir tanggal.</p>
+  <figure><div class="shot" style="max-height:58mm"><img src="panduan/gambar/a22-pengguna.jpg" alt="Pengguna"></div><figcaption><b>Pengguna</b> (hanya Owner). Data asli disamarkan.</figcaption></figure>
+
+  <h2>Pengamanan yang sudah ada</h2>
+  <ul>
+    <li><span class="tag t-ok">Berjalan</span> Login staf wajib kode 2FA. Akun pelanggan terpisah dan tidak bisa membuka admin.</li>
+    <li><span class="tag t-ok">Berjalan</span> Tamu hanya bisa melihat booking miliknya. Alamat booking memakai kode acak, bukan nomor urut.</li>
+    <li><span class="tag t-ok">Berjalan</span> Batas percobaan pada login, daftar, form kontak, dan pemesanan untuk mencegah penyalahgunaan.</li>
+    <li><span class="tag t-ok">Berjalan</span> <b>Log Aktivitas</b> mencatat siapa mengubah data apa; <b>Log Webhook Midtrans</b> mencatat kabar pembayaran yang masuk.</li>
+    <li><span class="tag t-ok">Berjalan</span> Bukti transfer dan foto ulasan yang belum disetujui disimpan tertutup.</li>
+    <li><span class="tag t-cek">Perlu dicek</span> Backup database terenkripsi otomatis setiap hari. Berjalan bila penjadwal aktif di server; perlu dipastikan di server produksi dan disimpan juga di luar server.</li>
+  </ul>
+
+  <h2>Kebiasaan aman untuk staf</h2>
+  <ol class="langkah">
+    <li>Satu orang satu akun. Jangan berbagi password atau HP authenticator.</li>
+    <li>Saat staf berhenti bekerja, Owner menonaktifkan akunnya di menu Pengguna.</li>
+    <li>Jangan mengirim data tamu (HP, email, bukti transfer) ke grup umum atau pihak lain.</li>
+    <li>Keluar dari admin bila memakai komputer bersama.</li>
+    <li>Jangan pernah membagikan isi file pengaturan server (berisi kunci Midtrans dan password database).</li>
+  </ol>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 15. FAQ ============================== -->
+<section class="page" id="faq">
+  <p class="eyebrow">Bagian 15</p>
+  <h1>Pertanyaan umum &amp; jika ada kendala</h1>
+  <h3>Bagaimana membuka admin panel?</h3>
+  <p>Buka alamat-domain/kelola, masuk dengan email dan password, lalu kode 2FA. Lupa password atau HP hilang: hubungi Owner.</p>
+  <h3>Di mana mencari sebuah reservasi?</h3>
+  <p>Menu <b>Booking</b> → ketik kode booking (mis. LG2TF6F26N), nama, atau nomor HP di kotak cari. Bisa juga lewat kotak <b>Cari</b> di kanan atas. Tamu yang akan datang terlihat di Dasbor › Kedatangan 7 hari ke depan.</p>
+  <h3>Bagaimana memastikan pembayaran berhasil?</h3>
+  <p>Buka detail booking. Pembayaran berhasil bila di <b>Riwayat Pembayaran</b> berstatus <span class="tag t-ok">Berhasil</span> dan status booking menjadi DP Dibayar atau Lunas. Untuk Midtrans, transaksi juga bisa dicek di dashboard Midtrans dengan nomor pesanan yang diawali kode booking.</p>
+  <h3>Apa arti pembayaran "Menunggu"?</h3>
+  <p>Tamu sudah membuka pembayaran Midtrans (mis. mendapat nomor virtual account) tetapi belum membayar. Status berubah sendiri setelah dibayar. Bila tidak dibayar sampai batas waktu, statusnya menjadi Kedaluwarsa.</p>
+  <h3>Status booking dan pembayaran terlihat tidak cocok?</h3>
+  <ol class="langkah">
+    <li>Minta tamu membuka lagi halaman bookingnya; website akan mengecek ulang ke Midtrans.</li>
+    <li>Tunggu beberapa menit; pengecekan otomatis berjalan tiap 5 menit bila penjadwal server aktif.</li>
+    <li>Lihat Dasbor › <b>Pembayaran perlu tindakan</b> (dibayar setelah unit terjual).</li>
+    <li>Cocokkan dengan dashboard Midtrans dan <b>Log Webhook Midtrans</b>. Bila uang sudah masuk lewat transfer, catat dengan <span class="ui">Catat pembayaran</span>. Jangan mengubah status secara lain; hubungi pengelola website bila masih tidak cocok.</li>
+  </ol>
+  <h3>Bagaimana mengganti harga, foto, atau teks di website?</h3>
+  <p>Harga dan foto akomodasi: <b>Tipe Unit &amp; Harga</b>. Promo: <b>Kode Promo</b>. Teks beranda/halaman info: <b>Halaman</b>. Kontak dan rekening: <b>Pengaturan Umum</b>. Lihat Bagian 9 dan 12.</p>
+  <h3>Kode promo ditolak "sedang tidak berlaku"?</h3>
+  <p>Hari ini berada di luar tanggal "Berlaku mulai/sampai". Masa berlaku dihitung dari tanggal memesan, bukan tanggal menginap.</p>
+  <h3>Tamu tidak bisa menulis ulasan?</h3>
+  <p>Pastikan bookingnya sudah di-<b>Check-in</b> oleh staf, tanggal check-out sudah lewat, dan booking ada di akun tamu (booking dari staf perlu ditautkan tamu lewat <b>Tambahkan booking lama</b>).</p>
+  <h3>Pendapatan di Laporan berbeda dengan nilai booking?</h3>
+  <p>Wajar. Pendapatan hanya uang yang sudah masuk; nilai booking adalah total pesanan termasuk sisa pelunasan (Bagian 13).</p>
+  <div class="page-footer"></div>
+</section>
+
+<!-- ============================== 16. ISTILAH & RINGKASAN ============================== -->
+<section class="page" id="istilah">
+  <p class="eyebrow">Bagian 16</p>
+  <h1>Daftar istilah</h1>
+  <table>
+    <tr><th style="width:38mm">Istilah</th><th>Artinya</th></tr>
+    <tr><td>Reservasi / booking</td><td>Pesanan menginap atas nama tamu, dengan kode unik (mis. LG2TF6F26N).</td></tr>
+    <tr><td>Dasbor</td><td>Halaman pertama admin panel berisi ringkasan dan hal yang perlu ditindaklanjuti.</td></tr>
+    <tr><td>Admin panel / CMS</td><td>Bagian khusus staf untuk mengelola isi dan operasional website tanpa programmer.</td></tr>
+    <tr><td>Hold (unit ditahan)</td><td>Unit disimpan sementara 60 menit untuk tamu yang sedang membayar.</td></tr>
+    <tr><td>DP / Pelunasan</td><td>Uang muka (25%) / sisa pembayaran sebelum batas H-3.</td></tr>
+    <tr><td>Status pembayaran</td><td>Keadaan satu transaksi: Menunggu, Berhasil, Gagal, Kedaluwarsa.</td></tr>
+    <tr><td>Midtrans</td><td>Layanan pembayaran online yang memproses transaksi tamu (QRIS, VA, e-wallet, sesuai akun resort).</td></tr>
+    <tr><td>Sandbox</td><td>Mode uji coba Midtrans; tidak ada uang sungguhan.</td></tr>
+    <tr><td>Transaksi</td><td>Satu kali pembayaran (DP, pelunasan, atau lunas).</td></tr>
+    <tr><td>Refund</td><td>Pengembalian uang ke tamu. <b>Tidak diproses otomatis</b> oleh website; dilakukan manual oleh resort.</td></tr>
+    <tr><td>E-ticket</td><td>Bukti booking berkode QR (PDF) yang ditunjukkan saat check-in.</td></tr>
+    <tr><td>Okupansi</td><td>Persentase unit-malam yang terjual dibanding yang tersedia.</td></tr>
+    <tr><td>2FA</td><td>Kode tambahan 6 angka dari aplikasi di HP saat staf masuk.</td></tr>
+    <tr><td>Penawaran B2B</td><td>Rancangan paket rombongan dari instansi, ditindaklanjuti sales.</td></tr>
+  </table>
+
+  <h2>Ringkasan fitur</h2>
+  <table>
+    <tr><th>Fitur</th><th style="width:30mm">Keadaan</th></tr>
+    <tr><td>Website publik, katalog akomodasi, aktivitas, paket, galeri, artikel</td><td><span class="tag t-ok">Berjalan</span></td></tr>
+    <tr><td>Cek ketersediaan, pemesanan online, pencegahan pesanan ganda</td><td><span class="tag t-ok">Berjalan</span></td></tr>
+    <tr><td>Akun pelanggan, riwayat booking, e-ticket PDF, ulasan &amp; moderasi</td><td><span class="tag t-ok">Berjalan</span></td></tr>
+    <tr><td>Admin: booking, pembayaran manual, check-in, kalender, harga, promo, konten, laporan &amp; Excel</td><td><span class="tag t-ok">Berjalan</span></td></tr>
+    <tr><td>Pembayaran Midtrans (diuji di mode uji coba)</td><td><span class="tag t-cek">Perlu dicek</span></td></tr>
+    <tr><td>Email (e-ticket, pengingat pelunasan, proposal, pemberitahuan pesan), backup otomatis</td><td><span class="tag t-cek">Perlu dicek</span></td></tr>
+    <tr><td>Pesan WhatsApp otomatis (hanya tombol chat WhatsApp), sinkron Google Sheet, Google Analytics, kalender ketersediaan bulanan untuk tamu, refund otomatis</td><td><span class="tag t-no">Belum ada</span></td></tr>
+  </table>
+  <p class="kecil">"Perlu dicek" berarti fiturnya sudah dibuat dan diuji di laptop, tetapi baru bisa dipastikan setelah server produksi, pengirim email, dan akun Midtrans produksi disiapkan.</p>
+  <div class="page-footer"></div>
+</section>
+
+<script>
+// Nomor halaman & daftar isi (dihitung dari urutan <section class="page">)
+(function () {
+  const pages = Array.from(document.querySelectorAll('section.page'));
+  pages.forEach((page, i) => {
+    if (page.hasAttribute('data-no-footer')) return;
+    let footer = page.querySelector('.page-footer');
+    if (!footer) { footer = document.createElement('div'); footer.className = 'page-footer'; page.appendChild(footer); }
+    footer.innerHTML = '<span><b>Panduan Website Lingkung Gunung Resort</b> · Penjelasan Fitur dan Panduan Penggunaan</span><span>Halaman ' + (i + 1) + ' dari ' + pages.length + '</span>';
+  });
+  document.querySelectorAll('[data-toc]').forEach(li => {
+    const target = document.getElementById(li.dataset.toc);
+    const page = target && target.closest('section.page');
+    li.querySelector('.hal').textContent = page ? pages.indexOf(page) + 1 : '–';
+  });
+})();
+</script>
+</body>
+</html>

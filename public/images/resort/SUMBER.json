@@ -1,0 +1,352 @@
+{
+ "glamping-udara": {
+  "id": 109,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/slider1.jpg",
+  "lebar": 1280,
+  "tinggi": 852,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "glamping-lembah": {
+  "id": 114,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/stock1.jpg",
+  "lebar": 1280,
+  "tinggi": 852,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "glamping-depan": {
+  "id": 1929,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/Gambar-WhatsApp-2024-10-30-pukul-09.27.48_e01df5bf-scaled.jpg",
+  "lebar": 2560,
+  "tinggi": 1920,
+  "tanggal_unggah": "2024-10-30"
+ },
+ "glamping-taman": {
+  "id": 1928,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/Gambar-WhatsApp-2024-10-30-pukul-09.27.46_23da63ea-scaled.jpg",
+  "lebar": 2560,
+  "tinggi": 1726,
+  "tanggal_unggah": "2024-10-30"
+ },
+ "glamping-jalan": {
+  "id": 1931,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/Gambar-WhatsApp-2024-10-30-pukul-09.27.53_f8bbe1ac-scaled.jpg",
+  "lebar": 1920,
+  "tinggi": 2560,
+  "tanggal_unggah": "2024-10-30"
+ },
+ "deck-pandang": {
+  "id": 1930,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/Gambar-WhatsApp-2024-10-30-pukul-09.27.52_4a291d5d-scaled.jpg",
+  "lebar": 1920,
+  "tinggi": 2560,
+  "tanggal_unggah": "2024-10-30"
+ },
+ "deluxe-kamar": {
+  "id": 2001,
+  "sumber": "https://elji.id/wp-content/uploads/2025/03/deluxe-room-3-scaled.jpg",
+  "lebar": 2560,
+  "tinggi": 1151,
+  "tanggal_unggah": "2025-03-19"
+ },
+ "deluxe-kamar-2": {
+  "id": 2000,
+  "sumber": "https://elji.id/wp-content/uploads/2025/03/deluxe-room-1-scaled.jpg",
+  "lebar": 2560,
+  "tinggi": 1151,
+  "tanggal_unggah": "2025-03-19"
+ },
+ "deluxe-kamar-3": {
+  "id": 2032,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/deluxe-room-4-scaled.jpg",
+  "lebar": 2560,
+  "tinggi": 1151,
+  "tanggal_unggah": "2025-03-19"
+ },
+ "deluxe-kamar-4": {
+  "id": 2031,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/deluxe-room-3-1-scaled.jpg",
+  "lebar": 2560,
+  "tinggi": 1151,
+  "tanggal_unggah": "2025-03-19"
+ },
+ "deluxe-kamar-5": {
+  "id": 2030,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/deluxe-room-2-1-scaled.jpg",
+  "lebar": 2560,
+  "tinggi": 1151,
+  "tanggal_unggah": "2025-03-19"
+ },
+ "deluxe-tegak": {
+  "id": 1956,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/Deluxe-Room-2-scaled.jpg",
+  "lebar": 1920,
+  "tinggi": 2560,
+  "tanggal_unggah": "2024-10-30"
+ },
+ "deluxe-balkon": {
+  "id": 2033,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/view-1-scaled.jpg",
+  "lebar": 2560,
+  "tinggi": 1151,
+  "tanggal_unggah": "2025-03-19"
+ },
+ "deluxe-balkon-2": {
+  "id": 2016,
+  "sumber": "https://elji.id/wp-content/uploads/2025/03/view2-scaled.jpg",
+  "lebar": 2560,
+  "tinggi": 1151,
+  "tanggal_unggah": "2025-03-19"
+ },
+ "suite-kamar": {
+  "id": 2014,
+  "sumber": "https://elji.id/wp-content/uploads/2025/03/junior-sweet-tdb3-scaled.jpg",
+  "lebar": 2560,
+  "tinggi": 1151,
+  "tanggal_unggah": "2025-03-19"
+ },
+ "suite-kamar-2": {
+  "id": 2013,
+  "sumber": "https://elji.id/wp-content/uploads/2025/03/junior-sweet-tdb-scaled.jpg",
+  "lebar": 2560,
+  "tinggi": 1151,
+  "tanggal_unggah": "2025-03-19"
+ },
+ "suite-kamar-3": {
+  "id": 2010,
+  "sumber": "https://elji.id/wp-content/uploads/2025/03/Junior-Sweet-twin-double-bed-scaled.jpg",
+  "lebar": 2560,
+  "tinggi": 1151,
+  "tanggal_unggah": "2025-03-19"
+ },
+ "suite-balkon": {
+  "id": 2015,
+  "sumber": "https://elji.id/wp-content/uploads/2025/03/view-4-scaled.jpg",
+  "lebar": 2560,
+  "tinggi": 1151,
+  "tanggal_unggah": "2025-03-19"
+ },
+ "suite-balkon-2": {
+  "id": 2003,
+  "sumber": "https://elji.id/wp-content/uploads/2025/03/view-3-scaled.jpg",
+  "lebar": 2560,
+  "tinggi": 1151,
+  "tanggal_unggah": "2025-03-19"
+ },
+ "suite-balkon-3": {
+  "id": 2002,
+  "sumber": "https://elji.id/wp-content/uploads/2025/03/view-1-scaled.jpg",
+  "lebar": 2560,
+  "tinggi": 1151,
+  "tanggal_unggah": "2025-03-19"
+ },
+ "kemping-barisan": {
+  "id": 1977,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/WhatsApp-Image-2024-08-07-at-1.11.56-PM-scaled.jpeg",
+  "lebar": 2560,
+  "tinggi": 1441,
+  "tanggal_unggah": "2025-01-30"
+ },
+ "kemping-api-unggun": {
+  "id": 1976,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/WhatsApp-Image-2024-08-07-at-1.11.55-PM-scaled.jpeg",
+  "lebar": 2560,
+  "tinggi": 1441,
+  "tanggal_unggah": "2025-01-30"
+ },
+ "kemping-lingkaran": {
+  "id": 1975,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/WhatsApp-Image-2023-10-13-at-09.44.15-5.jpeg",
+  "lebar": 1600,
+  "tinggi": 1066,
+  "tanggal_unggah": "2025-01-30"
+ },
+ "campsite-mobil": {
+  "id": 1989,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/WhatsApp-Image-2022-11-05-at-09.48.03-1.jpg",
+  "lebar": 1599,
+  "tinggi": 899,
+  "tanggal_unggah": "2025-01-30"
+ },
+ "campsite-tenda-mobil": {
+  "id": 129,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/stock9.jpg",
+  "lebar": 1280,
+  "tinggi": 852,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "campsite-pinus": {
+  "id": 107,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/slider3.jpg",
+  "lebar": 1280,
+  "tinggi": 852,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "campervan-tenda": {
+  "id": 1990,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/WhatsApp-Image-2023-10-11-at-09.16.37-1-1.jpg",
+  "lebar": 1151,
+  "tinggi": 1151,
+  "tanggal_unggah": "2025-01-30"
+ },
+ "campervan-keluarga": {
+  "id": 137,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/stock16.jpg",
+  "lebar": 1280,
+  "tinggi": 853,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "campervan-atap": {
+  "id": 1784,
+  "sumber": "https://elji.id/wp-content/uploads/2024/09/Tips-Camper-Van.jpeg",
+  "lebar": 1600,
+  "tinggi": 900,
+  "tanggal_unggah": "2024-09-19"
+ },
+ "campervan-malam": {
+  "id": 1789,
+  "sumber": "https://elji.id/wp-content/uploads/2024/09/tips-campervan-elji-resort.jpeg",
+  "lebar": 1280,
+  "tinggi": 720,
+  "tanggal_unggah": "2024-09-20"
+ },
+ "trekking-sungai": {
+  "id": 1949,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/Traking-Lingkung-Gunung-01.jpg",
+  "lebar": 1440,
+  "tinggi": 1080,
+  "tanggal_unggah": "2024-10-30"
+ },
+ "paintball": {
+  "id": 1935,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/Paintball.jpg",
+  "lebar": 960,
+  "tinggi": 638,
+  "tanggal_unggah": "2024-10-30"
+ },
+ "offroad": {
+  "id": 1920,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/offroad.jpg",
+  "lebar": 1040,
+  "tinggi": 780,
+  "tanggal_unggah": "2024-10-30"
+ },
+ "rafting": {
+  "id": 1915,
+  "sumber": "https://elji.id/wp-content/uploads/2024/10/HLML2543.jpg",
+  "lebar": 1280,
+  "tinggi": 852,
+  "tanggal_unggah": "2024-10-30"
+ },
+ "flying-fox": {
+  "id": 124,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/stock4.jpg",
+  "lebar": 1280,
+  "tinggi": 851,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "flying-fox-2": {
+  "id": 108,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/slider2.jpg",
+  "lebar": 1280,
+  "tinggi": 851,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "senam-rombongan": {
+  "id": 128,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/stock8.jpg",
+  "lebar": 1280,
+  "tinggi": 852,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "gathering-panggung": {
+  "id": 127,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/stock7.jpg",
+  "lebar": 1280,
+  "tinggi": 852,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "outbound-lapangan": {
+  "id": 122,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/stock2.jpg",
+  "lebar": 1280,
+  "tinggi": 852,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "pramuka-upacara": {
+  "id": 111,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/slider.jpg",
+  "lebar": 1280,
+  "tinggi": 853,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "gowes": {
+  "id": 133,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/LINE_ALBUM_JULI-2023_230817_8.jpg",
+  "lebar": 1280,
+  "tinggi": 851,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "rombongan-hkbp": {
+  "id": 1843,
+  "sumber": "https://elji.id/wp-content/uploads/2024/09/Pemuda-Pemudi-HKBP-Depok-1-scaled.jpeg",
+  "lebar": 2560,
+  "tinggi": 1444,
+  "tanggal_unggah": "2024-09-26"
+ },
+ "kolam-renang": {
+  "id": 136,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/stock15.jpg",
+  "lebar": 1280,
+  "tinggi": 851,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "aula": {
+  "id": 134,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/stock13.jpg",
+  "lebar": 1280,
+  "tinggi": 851,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "kafe-deck": {
+  "id": 126,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/stock6.jpg",
+  "lebar": 1280,
+  "tinggi": 851,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "kafe-deck-2": {
+  "id": 125,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/stock5.jpg",
+  "lebar": 1280,
+  "tinggi": 852,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "kafe-teras": {
+  "id": 105,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/slider5.jpg",
+  "lebar": 1280,
+  "tinggi": 851,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "deck-lembah": {
+  "id": 106,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/slider4.jpg",
+  "lebar": 1280,
+  "tinggi": 852,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "makan-bersama": {
+  "id": 132,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/stock12.jpg",
+  "lebar": 1280,
+  "tinggi": 851,
+  "tanggal_unggah": "2023-08-17"
+ },
+ "kolam-ikan": {
+  "id": 138,
+  "sumber": "https://elji.id/wp-content/uploads/2023/08/stoock17.jpg",
+  "lebar": 1280,
+  "tinggi": 851,
+  "tanggal_unggah": "2023-08-17"
+ }
+}

@@ -1,10 +1,9 @@
 # Lingkung Gunung Resort — Website & Direct Booking System
 
-A production-grade web platform for **Lingkung Gunung Adventure Camp Resort (Bogor, Indonesia)** that
-combines a marketing website, a direct-booking engine (B2C), a group package builder (B2B) and a
-role-based back office in a single Laravel application. The goal is to move reservations away from
-OTA commissions and manual WhatsApp bookkeeping toward a system where availability, pricing and
-payments are managed in one place.
+Web platform for **Lingkung Gunung Adventure Camp Resort (Bogor, Indonesia)** that combines a
+marketing website, a direct-booking engine (B2C), a group package builder (B2B) and a role-based
+back office in a single Laravel application. Guests can check availability, book and pay online,
+while the resort team manages availability, pricing, payments and content in one place.
 
 ![PHP](https://img.shields.io/badge/PHP-8.4-777BB4?logo=php&logoColor=white)
 ![Laravel](https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white)
@@ -147,10 +146,8 @@ vendor/bin/pint                     # code style
 
 ## Author
 
-**Kenneth Andreas** — Software Engineer  
-Responsible for requirements analysis, system design, full-stack implementation, testing and deployment.
-
-GitHub: [@kennethandreas](https://github.com/kennethandreas)
+Designed and developed by **Kenneth Andreas** ([@kennethandreas](https://github.com/kennethandreas)):
+requirements analysis, system design, implementation, testing and deployment.
 
 ## License
 

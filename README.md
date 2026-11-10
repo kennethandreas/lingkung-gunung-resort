@@ -152,7 +152,10 @@ Responsible for requirements analysis, system design, full-stack implementation,
 
 GitHub: [@kennethandreas](https://github.com/kennethandreas)
 
----
+## License
 
-© 2026 Kenneth Andreas. Built for Lingkung Gunung Adventure Camp Resort. Resort photos, logo and brand
-assets belong to their respective owner.
+**Proprietary — all rights reserved.** This source code is published for portfolio viewing only;
+copying, modification, redistribution or deployment is not permitted without written permission.
+See [`LICENSE`](LICENSE).
+
+Resort name, logo, photographs and brand assets belong to Lingkung Gunung Adventure Camp Resort.
